@@ -16,7 +16,8 @@
     --background: #111118;
     --surface: #17171c;
     --selection: #2b2b3c;
-    --text-color: #dce0e5;
+    --text: #dce0e5;
+    --text-subdued: #818d9c;
     --interactive: #6b6bcc;
     --interactive-hovered: #6b6bcc;
     --font-family-sans: -apple-system, BlinkMacSystemFont, 'San Francisco', 'Segoe UI', 'Helvetica Neue', sans-serif;
@@ -34,7 +35,7 @@
   body {
     font-family: var(--font-family-sans);
     line-height: 1.5;
-    color: var(--text-color);
+    color: var(--text);
     background-color: var(--background);
   }
 
@@ -46,6 +47,10 @@
   a:hover {
     color: var(--interactive-hovered);
     text-decoration: underline;
+  }
+
+  .subdued {
+    color: var(--text-subdued);
   }
 
   main { 
