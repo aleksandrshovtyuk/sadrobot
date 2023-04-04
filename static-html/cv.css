@@ -57,10 +57,10 @@
   }
 
   .grid-container {
-    width: 60vw;
+    width: 80vw;
     margin: auto;
     display: grid;
-    grid-template-columns: auto 40rem auto;
+    grid-template-columns: 20% 60% 20%;
   }
 
   .person {
