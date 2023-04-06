@@ -13,17 +13,18 @@
     --text-subdued: #818d9c;
     --interactive: #6b6bcc;
     --interactive-hovered: #6b6bcc;
+    --divider: #25252d;
 
     --font-family-sans: -apple-system, BlinkMacSystemFont, 'San Francisco', 'Segoe UI', 'Helvetica Neue', sans-serif;
     
     --fz-mobile: 0.875rem;                        /* 14px */
-    --lh-mobile: 1.571428571428571;               /* 22px = 22px/14px */
+    --lh-mobile: 1.571428571428571;               /* 22px/14px */
 
     --fz-tablet-up: 1rem;                         /* 16px */
     --lh-tablet-up: 1.5;                          /* 24px/16px */
 
     --fz-large-desktop-up: 1.125rem;              /* 18px */
-    --lh-large-desktop-up: 1.444444444444444;     /* 26/18 */
+    --lh-large-desktop-up: 1.444444444444444;     /* 26px/18px */
 
     --color-calendar-graph-day-bg: var(--selection);
     --color-calendar-graph-day-L1-bg: #39dd34;
@@ -48,7 +49,7 @@
       }
   }
 
-  @media (min-width: 1280px) {
+  /* @media (min-width: 1280px) {
     html {
       font-size: var(--fz-desktop-up);
       line-height: var(--lh-tablet-up);
@@ -60,7 +61,7 @@
       font-size: var(--fz-large-desktop-up);
       line-height: var(--lh-large-desktop-up);
     }
-  }
+  } */
 
   body {
     font-family: var(--font-family-sans);
@@ -162,7 +163,7 @@
     display: block;
     height: 1px;
     border: 0;
-    border-top: 1px solid #ccc;
+    border-top: 0.67px solid var(--divider);
     margin: 1em 0;
     padding: 0;
   }
@@ -213,26 +214,54 @@
   }
 
   .grid-container {
-    /* width: 80vw; */
+    position: relative;
+    max-width: 1280px;
     margin: auto;
+    padding: 1.5rem;
     display: grid;
-    grid-template-columns: 10% auto 10%;
+    grid-template-columns: 22.5% auto 22.5%;
+    grid-gap: 1.5rem;
   }
 
-  .person {
+  .vcard-photo {
+    max-width: 100%;
+    border-radius: 1rem;
+    border: 0.67px solid var(--divider);
+  }
+
+  aside {
+    position: relative;
+    padding: 1.5rem 0;
+  }
+  
+  .vcard {
     position: sticky;
+    top: 1.5rem;
+
+  }
+
+  .vcard-details {
+    padding: 0;
+  }
+
+  .vcard-detail {
+    list-style: none;
+  }
+
+  .vcard-detail svg {
+    margin-right: .5rem;
+    fill: var(--text);
   }
 
   main { 
-    /* max-width: 40rem;
-    margin: auto; */
+    padding: 1.5rem 0;
   }
 
   .surface {
     background-color: var(--surface);
     padding: 1em;
     border-radius: 1rem;
-    border: 0.67px solid #25252d;
+    border: 0.67px solid var(--divider);
   }
 
   .readme *:first-child {
