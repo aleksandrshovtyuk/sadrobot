@@ -217,7 +217,7 @@
     position: relative;
     max-width: 1280px;
     margin: auto;
-    padding: 1.5rem;
+    padding: 0 1.5rem;
     display: grid;
     grid-template-columns: 22.5% auto 22.5%;
     grid-gap: 1.5rem;
@@ -237,14 +237,10 @@
   .vcard {
     position: sticky;
     top: 1.5rem;
-
   }
 
   .vcard-details {
-    padding: 0;
-  }
-
-  .vcard-detail {
+    padding: 0 1.5rem;
     list-style: none;
   }
 
@@ -259,7 +255,7 @@
 
   .surface {
     background-color: var(--surface);
-    padding: 1em;
+    padding: 1.5em;
     border-radius: 1rem;
     border: 0.67px solid var(--divider);
   }
