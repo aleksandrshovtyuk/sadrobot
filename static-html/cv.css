@@ -239,8 +239,13 @@
     top: 1.5rem;
   }
 
+  .vcard hr {
+    margin: 1.5rem;
+  }
+
   .vcard-details {
-    padding: 0 1.5rem;
+    margin: 0;
+    padding: 0 0 0 1.5rem;
     list-style: none;
   }
 
