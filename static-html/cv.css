@@ -220,7 +220,20 @@
     padding: 0 1.5rem;
     display: grid;
     grid-template-columns: 22.5% auto 22.5%;
+    grid-template-areas: "aside-col main-col nav-col";
     grid-gap: 1.5rem;
+  }
+
+  aside {
+    grid-area: aside-col;
+  }
+  
+  main {
+    grid-area: main-col;
+  }
+
+  nav {
+    grid-area: nav-col;    
   }
 
   .vcard-photo {
@@ -251,7 +264,7 @@
 
   .vcard-detail svg {
     margin-right: .5rem;
-    fill: var(--text);
+    fill: var(--text-subdued);
   }
 
   main { 
