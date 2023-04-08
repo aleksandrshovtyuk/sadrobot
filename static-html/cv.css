@@ -262,6 +262,13 @@
     border-bottom: 0.67px solid var(--divider);
   }
 
+  /*
+   * Additional info Section
+   */
+
+  .section-additional {
+    
+  }
 
   .vcard-photo {
     max-width: 100%;
@@ -296,6 +303,11 @@
     
   .github-calendar {
     text-align: center;
+  }
+
+  svg.js-calendar-graph-svg + div {
+    font-size: 1rem;
+    margin-top: 1rem;
   }
   
   rect.ContributionCalendar-day[data-level='0'] {
@@ -373,7 +385,8 @@
   }
   
   .table-column {
-      display: table-cell;
+      /* display: table-cell; */
+      display: none;
       width: 1%;
       padding-right: 10px;
       padding-left: 10px;
