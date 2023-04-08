@@ -1,15 +1,9 @@
 /*! HTML5 Boilerplate v8.0.0 | MIT License | https://html5boilerplate.com/ */
+/*  main.css 3.0.0 | MIT License | https://github.com/h5bp/main.css#readme */
 
-/* main.css 3.0.0 | MIT License | https://github.com/h5bp/main.css#readme */
-/*
- * What follows is the result of much research on cross-browser styling.
- * Credit left inline and big thanks to Nicolas Gallagher, Jonathan Neal,
- * Kroc Camen, and the H5BP dev community and team.
- */
-
-/* ==========================================================================
-   Variables: tokens for styling layouts
-   ========================================================================== */
+  /* ==========================================================================
+    Variables: tokens for styling layouts
+    ========================================================================== */
 
   :root {
     --background: #111118;
@@ -19,7 +13,18 @@
     --text-subdued: #818d9c;
     --interactive: #6b6bcc;
     --interactive-hovered: #6b6bcc;
+    --divider: #25252d;
+
     --font-family-sans: -apple-system, BlinkMacSystemFont, 'San Francisco', 'Segoe UI', 'Helvetica Neue', sans-serif;
+    
+    --fz-mobile: 0.875rem;                        /* 14px */
+    --lh-mobile: 1.571428571428571;               /* 22px/14px */
+
+    --fz-tablet-up: 1rem;                         /* 16px */
+    --lh-tablet-up: 1.5;                          /* 24px/16px */
+
+    --fz-large-desktop-up: 1.125rem;              /* 18px */
+    --lh-large-desktop-up: 1.444444444444444;     /* 26px/18px */
 
     --color-calendar-graph-day-bg: var(--selection);
     --color-calendar-graph-day-L1-bg: #39dd34;
@@ -29,18 +34,50 @@
   }
 
 
-/* ==========================================================================
-   Base styles: opinionated defaults
-   ========================================================================== */
+  /* ==========================================================================
+    Base styles: opinionated defaults
+    ========================================================================== */
 
   html {
-    font-family: var(--font-family-sans);
-    line-height: 1.5rem;
+    font-size: var(--fz-mobile);
+    line-height: var(--lh-mobile);
   }
 
+  @media (min-width: 460px) {
+      html {
+        font-size: var(--fz-tablet-up);
+        line-height: var(--lh-tablet-up);
+      }
+  }
+
+  /* @media (min-width: 1280px) {
+    html {
+      font-size: var(--fz-desktop-up);
+      line-height: var(--lh-tablet-up);
+    }
+  }
+
+  @media (min-width: 1440px) {
+    html {
+      font-size: var(--fz-large-desktop-up);
+      line-height: var(--lh-large-desktop-up);
+    }
+  } */
+
   body {
-    color: var(--text);
+    font-family: var(--font-family-sans);
     background-color: var(--background);
+    color: var(--text);
+  }
+
+  p, ul, pre, table {
+    margin: 0 0 1.428571428571429rem; /* 22px */
+  }
+
+  @media (min-width: 460px) {
+    p, ul, pre, table {
+      margin: 0 0 1.5rem; /* 24px */
+    }
   }
 
   h1, h2, h3, h4, h5, h6 {
@@ -78,10 +115,6 @@
     font-size: 1rem;
   }
 
-  p, ul, pre {
-    margin: 0 0 1.5rem;
-  }
-
   ul li {
     margin-bottom: .5rem;
   }
@@ -100,6 +133,9 @@
     text-decoration: underline;
   }
 
+  .subdued {
+    color: var(--text-subdued);
+  }
 
   /*
    * Remove text-shadow in selection highlight:
@@ -131,11 +167,11 @@
     display: block;
     height: 1px;
     border: 0;
-    border-top: 1px solid #ccc;
+    border-top: 0.67px solid var(--divider);
     margin: 1em 0;
     padding: 0;
   }
-  
+
 
   /*
    * Remove the gap between audio, canvas, iframes,
@@ -177,223 +213,267 @@
      App styles
      ========================================================================== */
 
-    .subdued {
-      color: var(--text-subdued);
-    }
+  .grid-container {
+    position: relative;
 
-    .grid-container {
-      /* width: 80vw; */
-      margin: auto;
-      display: grid;
-      grid-template-columns: 10% auto 10%;
-    }
+    display: grid;
+    grid-template-columns: 22.5% auto 22.5%;
+    grid-template-areas: "aside-col main-col nav-col";
+    grid-gap: 1.5rem;
 
-    .person {
-      position: sticky;
-    }
+    max-width: 1280px;
+    margin: auto;
+    padding: 0 1.5rem;
+  }
+  
+  .main-area {
+    grid-area: main-col;
+    display: grid;
+    grid-gap: 1.5rem;
 
-    main { 
-      /* max-width: 40rem;
-      margin: auto; */
-    }
+    padding: 1.5rem 0;
+  }
 
-    .surface {
-      background-color: var(--surface);
-      padding: 1em;
-      border-radius: 1rem;
-      border: 0.67px solid #25252d;
-    }
+  .aside-area {
+    position: relative;
+    grid-area: aside-col;
+    padding: 1.5rem 0;
+  }
 
-    .readme *:first-child {
-      margin-top: 0;
-    }
+  .nav-area {
+    grid-area: nav-col;    
+  }
+
+  .surface {
+    background-color: var(--surface);
+    padding: 1.5em;
+    border-radius: 1rem;
+    border: 0.67px solid var(--divider);
+  }
+
+
+  /*
+   * Readme Section
+   */
+
+  .section-readme {}
+
+  .desired-position {
+    border-bottom: 0.67px solid var(--divider);
+  }
+
+
+  .vcard-photo {
+    max-width: 100%;
+    border-radius: 1rem;
+    border: 0.67px solid var(--divider);
+  }
+  
+  .vcard {
+    position: sticky;
+    top: 1.5rem;
+  }
+
+  .vcard hr {
+    margin: 1.5rem;
+  }
+
+  .vcard-details {
+    margin: 0;
+    padding: 0 0 0 1.5rem;
+    list-style: none;
+  }
+
+  .vcard-detail svg {
+    margin-right: .5rem;
+    fill: var(--text-subdued);
+  }
 
 
   /* ==========================================================================
      Github calendar styles
      ========================================================================== */
     
-    .github-calendar {
+  .github-calendar {
+    text-align: center;
+  }
+  
+  rect.ContributionCalendar-day[data-level='0'] {
+      fill: var(--color-calendar-graph-day-bg);
+  }
+  
+  rect.ContributionCalendar-day[data-level='1'] {
+      fill: var(--color-calendar-graph-day-L1-bg);
+  }
+  
+  rect.ContributionCalendar-day[data-level='2'] {
+      fill: var(--color-calendar-graph-day-L2-bg);
+  }
+  
+  rect.ContributionCalendar-day[data-level='3'] {
+      fill: var(--color-calendar-graph-day-L3-bg);
+  }
+  
+  rect.ContributionCalendar-day[data-level='4'] {
+      fill: var(--color-calendar-graph-day-L4-bg);
+  }
+  
+  .github-calendar .width-full > .float-left {
+      display: none;
+  }
+  
+  .calendar-graph text.wday,
+  .calendar-graph text.month {
+      font-size: 10px;
+      fill: #aaa;
+  }
+  
+  .contrib-legend {
+      text-align: right;
+      padding: 0 14px 10px 0;
+      display: inline-block;
+      float: right;
+  }
+  
+  .contrib-legend .legend {
+      display: inline-block;
+      list-style: none;
+      margin: 0 5px;
+      position: relative;
+      bottom: -1px;
+      padding: 0;
+  }
+  
+  .contrib-legend .legend li {
+      display: inline-block;
+      width: 10px;
+      height: 10px;
+  }
+  
+  .text-small {
+      font-size: 12px;
+      color: #767676;
+  }
+  
+  .calendar-graph {
+      padding: 5px 0 0;
       text-align: center;
-      margin: 2rem auto;
-    }
-    
-    rect.ContributionCalendar-day[data-level='0'] {
-        fill: var(--color-calendar-graph-day-bg);
-    }
-    
-    rect.ContributionCalendar-day[data-level='1'] {
-        fill: var(--color-calendar-graph-day-L1-bg);
-    }
-    
-    rect.ContributionCalendar-day[data-level='2'] {
-        fill: var(--color-calendar-graph-day-L2-bg);
-    }
-    
-    rect.ContributionCalendar-day[data-level='3'] {
-        fill: var(--color-calendar-graph-day-L3-bg);
-    }
-    
-    rect.ContributionCalendar-day[data-level='4'] {
-        fill: var(--color-calendar-graph-day-L4-bg);
-    }
-    
-    .github-calendar .width-full > .float-left {
-        display: none;
-    }
-    
-    .calendar-graph text.wday,
-    .calendar-graph text.month {
-        font-size: 10px;
-        fill: #aaa;
-    }
-    
-    .contrib-legend {
-        text-align: right;
-        padding: 0 14px 10px 0;
-        display: inline-block;
-        float: right;
-    }
-    
-    .contrib-legend .legend {
-        display: inline-block;
-        list-style: none;
-        margin: 0 5px;
-        position: relative;
-        bottom: -1px;
-        padding: 0;
-    }
-    
-    .contrib-legend .legend li {
-        display: inline-block;
-        width: 10px;
-        height: 10px;
-    }
-    
-    .text-small {
-        font-size: 12px;
-        color: #767676;
-    }
-    
-    .calendar-graph {
-        padding: 5px 0 0;
-        text-align: center;
-    }
-    
-    .contrib-column {
-        padding: 15px 0;
-        text-align: center;
-        border-left: 0.67px solid #25252d;
-        border-top: 0.67px solid #25252d;
-        font-size: 11px;
-    }
-    
-    .contrib-column-first {
-        border-left: 0;
-    }
-    
-    .table-column {
-        display: table-cell;
-        width: 1%;
-        padding-right: 10px;
-        padding-left: 10px;
-        vertical-align: top;
-    }
-    
-    .contrib-number {
-        font-weight: 300;
-        line-height: 1.3em;
-        font-size: 24px;
-        display: block;
-    }
-    
-    .github-calendar img.spinner {
-        width: 70px;
-        margin-top: 50px;
-        min-height: 70px;
-    }
-    
-    .monospace {
-        text-align: center;
-        color: #000;
-        font-family: monospace;
-    }
-    
-    .monospace a {
-        color: #1D75AB;
-        text-decoration: none;
-    }
-    
-    .contrib-footer {
-        font-size: 11px;
-        padding: 0 10px 12px;
-        text-align: left;
-        width: 100%;
-        box-sizing: border-box;
-        height: 26px;
-    }
-    
-    .left.text-muted {
-        float: left;
-        margin-left: 9px;
-        color: #767676;
-    }
-    .left.text-muted a {
-        color: #4078c0;
-        text-decoration: none;
-    }
-    .left.text-muted a:hover,
-    .monospace a:hover {
-        text-decoration: underline;
-    }
-    
-    h2.f4.text-normal.mb-3 {
-        display: none;
-    }
-    
-    .float-left.text-gray {
-        float: left;
-    }
-    #user-activity-overview{
-        display:none;
-    }
-    
-    .day-tooltip {
-        white-space: nowrap;
-        position: absolute;
-        z-index: 99999;
-        padding: 10px;
-        font-size: 12px;
-        color: #959da5;
-        text-align: center;
-        background: rgba(0,0,0,.85);
-        border-radius: 3px;
-        display: none;
-        pointer-events: none;
-    }
-    .day-tooltip strong {
-        color: #dfe2e5;
-    }
-    .day-tooltip.is-visible {
-        display: block;
-    }
-    .day-tooltip:after {
-        position: absolute;
-        bottom: -10px;
-        left: 50%;
-        width: 5px;
-        height: 5px;
-        box-sizing: border-box;
-        margin: 0 0 0 -5px;
-        content: " ";
-        border: 5px solid transparent;
-        border-top-color: rgba(0,0,0,.85)
-    }
-    
-    text.ContributionCalendar-label {
-        fill: #ccc;
-        font-size: 11px;
-    }
+  }
+  
+  .contrib-column {
+      padding: 15px 0;
+      text-align: center;
+      border-left: 0.67px solid #25252d;
+      border-top: 0.67px solid #25252d;
+      font-size: 11px;
+  }
+  
+  .contrib-column-first {
+      border-left: 0;
+  }
+  
+  .table-column {
+      display: table-cell;
+      width: 1%;
+      padding-right: 10px;
+      padding-left: 10px;
+      vertical-align: top;
+  }
+  
+  .contrib-number {
+      font-weight: 300;
+      line-height: 1.3em;
+      font-size: 24px;
+      display: block;
+  }
+  
+  .github-calendar img.spinner {
+      width: 70px;
+      margin-top: 50px;
+      min-height: 70px;
+  }
+  
+  .monospace {
+      text-align: center;
+      color: #000;
+      font-family: monospace;
+  }
+  
+  .monospace a {
+      color: #1D75AB;
+      text-decoration: none;
+  }
+  
+  .contrib-footer {
+      font-size: 11px;
+      padding: 0 10px 12px;
+      text-align: left;
+      width: 100%;
+      box-sizing: border-box;
+      height: 26px;
+  }
+  
+  .left.text-muted {
+      float: left;
+      margin-left: 9px;
+      color: #767676;
+  }
+  .left.text-muted a {
+      color: #4078c0;
+      text-decoration: none;
+  }
+  .left.text-muted a:hover,
+  .monospace a:hover {
+      text-decoration: underline;
+  }
+  
+  h2.f4.text-normal.mb-3 {
+      display: none;
+  }
+  
+  .float-left.text-gray {
+      float: left;
+  }
+  #user-activity-overview{
+      display:none;
+  }
+  
+  .day-tooltip {
+      white-space: nowrap;
+      position: absolute;
+      z-index: 99999;
+      padding: 10px;
+      font-size: 12px;
+      color: #959da5;
+      text-align: center;
+      background: rgba(0,0,0,.85);
+      border-radius: 3px;
+      display: none;
+      pointer-events: none;
+  }
+  .day-tooltip strong {
+      color: #dfe2e5;
+  }
+  .day-tooltip.is-visible {
+      display: block;
+  }
+  .day-tooltip:after {
+      position: absolute;
+      bottom: -10px;
+      left: 50%;
+      width: 5px;
+      height: 5px;
+      box-sizing: border-box;
+      margin: 0 0 0 -5px;
+      content: " ";
+      border: 5px solid transparent;
+      border-top-color: rgba(0,0,0,.85)
+  }
+  
+  text.ContributionCalendar-label {
+      fill: #ccc;
+      font-size: 11px;
+  }
   
   /* ==========================================================================
      Helper classes
@@ -472,29 +552,20 @@
     clear: both;
   }
   
+ 
   /* ==========================================================================
-     EXAMPLE Media Queries for Responsive Design.
-     These examples override the primary ('mobile first') styles.
-     Modify as content requires.
+     Print styles.
+     Inlined to avoid the additional HTTP request:
+     https://www.phpied.com/delay-loading-your-print-css/
      ========================================================================== */
-  
-  @media only screen and (min-width: 35em) {
-    /* Style adjustments for viewports that meet the condition */
-  }
-  
+    
   @media print,
     (-webkit-min-device-pixel-ratio: 1.25),
     (min-resolution: 1.25dppx),
     (min-resolution: 120dpi) {
     /* Style adjustments for high resolution devices */
   }
-  
-  /* ==========================================================================
-     Print styles.
-     Inlined to avoid the additional HTTP request:
-     https://www.phpied.com/delay-loading-your-print-css/
-     ========================================================================== */
-  
+
   @media print {
     *,
     *::before,

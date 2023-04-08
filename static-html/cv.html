@@ -5,35 +5,23 @@
   <title>CV Template</title>
   <meta name="description" content="">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-
   <link rel="icon" href="favicon.ico" sizes="any">
   <link rel="icon" href="icon.svg" type="image/svg+xml">
   <link rel="apple-touch-icon" href="icon.png">
-
   <link rel="stylesheet" href="normalize.css">
   <link rel="stylesheet" href="cv.css">
-
   <script type="application/javascript" src="github-calendar.min.js"></script>
-
   <meta name="theme-color" content="#fafafa">
 </head>
 <body>
   <div class="grid-container">
-    <aside>
-      <p class="person">Max Verbitsky</p>
-    </aside>
-    <main>
-      <h1>CV Template</h1>
-      <!-- Readme section -->
-      <section class="readme surface">
-        
-        <h2>A backend python student from Russia</h2>
-        
+    <main class="main-area">
+      <section class="section-readme surface">
+        <h1 class="desired-position">Python разработчик</h1>
         <ul>
           <li>🌱&nbsp;I’m currently learning Django Framework, DRF, Telegram Bot API</li>
           <li>📫&nbsp;How to reach me <a href="mailto:maxxtor21@gmail.com">maxxtor21@gmail.com</a>, <a href="mailto:maxxtor@yandex.ru">maxxtor@yandex.ru</a></li>
         </ul>
-
         <p class="subdued">Issues are used to track todos, bugs, feature requests, and more. As issues are created, they’ll appear here in a searchable and filterable list. To get started, you should create an issue.</p>
 
         <h3>Languages and Tools:</h3>
@@ -70,11 +58,37 @@
           </a>
         </p>
       </section>
-      <section class="github-calendar surface">
-        <!-- Loading stuff -->
-        Получаем данные с GitHub
+      <section class="section-github surface">
+        <div class="github-calendar">
+          Получаем данные от GitHub
+        </div>
       </section>
-      <section>
+      <section class="section-additional">
+        <h3>Дополнительная информация</h3>
+        <p>По роду деятельности работал с базами данных и формировал на их основании отчетность.
+          Для обработки больших массивов информации начал использовать инструменты
+          написанные на python. Их эффективность побудила начать изучение языка.
+          Впечатлившись возможностями python для решения прикладных задач решил связать свою
+          будущую деятельность с backend разработкой.</p>
+  
+          <p>
+            По теме смотрю Corey Schafer (разбор фреймворков), pajlada (увлекся написанием ботов),
+            Тимофей Хирьянов (алгоритмы и структуры данных), Гоша Дударь и читаю telegram каналы
+            для общего развития pythonist.ru, pythonetc.
+          </p>
+  
+          <p>
+            Всегда стараюсь найти компромиссы и точки соприкосновения с любым мнением. С
+            помощью этого успешно заключил более 40 договоров с юридическими лицами, также
+            расширил штат сотрудников на 10 человек.
+          </p>
+  
+          <p>
+            В свободное время занимаюсь сплавами на байдарках по местным поволжским рекам
+            (Волга, Медведица, Хопер).
+          </p>
+      </section>
+      <section class="hidden">
         <h1>A Visual Type Scale</h1>
 
 <p>What looked like a small patch of purple grass, above five feet square, was moving across the sand in their direction.</p>
@@ -118,7 +132,7 @@
 
 <p class="text_small">— Excerpt from A Voyage to Arcturus, by David Lindsay.</p>
       </section>
-      <section class="carier-path">
+      <section class="section-carier">
         <h2>Опыт работы</h2>
         <p>13 лет 9 месяцев</p>
         <hr>
@@ -181,7 +195,62 @@
         </article>
       </section>
     </main>
-    <nav>
+    <aside class="aside-area">
+      <div class="vcard">
+        <img class="vcard-photo" src="photo.jpg" alt="Max Verbitsky">
+        <ul class="vcard-details">
+          <li class="vcard-detail">
+            <h3>Вербицкий Максим</h3>
+          </li>
+          <li class="vcard-detail">
+            <svg viewBox="0 0 16 16" width="16" height="16" xmlns="http://www.w3.org/2000/svg">
+              <path d="m12.596 11.596-3.535 3.536a1.5 1.5 0 0 1-2.122 0l-3.535-3.536a6.5 6.5 0 1 1 9.192-9.193 6.5 6.5 0 0 1 0 9.193Zm-1.06-8.132v-.001a5 5 0 1 0-7.072 7.072L8 14.07l3.536-3.534a5 5 0 0 0 0-7.072ZM8 9a2 2 0 1 1-.001-3.999A2 2 0 0 1 8 9Z"></path>
+            </svg>
+            <span class="p-label"><b>Саратов</b> <span class="subdued">(UTC +04:00)</span>
+          </li>
+          <li class="vcard-detail">
+            <svg viewBox="0 0 16 16" width="16" height="16" xmlns="http://www.w3.org/2000/svg">
+              <path d="M1.75 2h12.5c.966 0 1.75.784 1.75 1.75v8.5A1.75 1.75 0 0 1 14.25 14H1.75A1.75 1.75 0 0 1 0 12.25v-8.5C0 2.784.784 2 1.75 2ZM1.5 12.251c0 .138.112.25.25.25h12.5a.25.25 0 0 0 .25-.25V5.809L8.38 9.397a.75.75 0 0 1-.76 0L1.5 5.809v6.442Zm13-8.181v-.32a.25.25 0 0 0-.25-.25H1.75a.25.25 0 0 0-.25.25v.32L8 7.88Z"></path>
+            </svg>
+            <a href="mailto:maxxtor21@gmail.com">maxxtor21@gmail.com</a>
+          </li>
+          <li class="vcard-detail">
+            <svg viewBox="0 0 16 16" width="16" height="16" xmlns="http://www.w3.org/2000/svg">
+              <path d="M3.75 0h8.5C13.216 0 14 .784 14 1.75v12.5A1.75 1.75 0 0 1 12.25 16h-8.5A1.75 1.75 0 0 1 2 14.25V1.75C2 .784 2.784 0 3.75 0ZM3.5 1.75v12.5c0 .138.112.25.25.25h8.5a.25.25 0 0 0 .25-.25V1.75a.25.25 0 0 0-.25-.25h-8.5a.25.25 0 0 0-.25.25ZM8 13a1 1 0 1 1 0-2 1 1 0 0 1 0 2Z"/>
+            </svg>
+            <a href="tel:+79279130330">+7 927 913 0330</a>
+          </li>
+          <li class="vcard-detail">
+            <svg width="16" height="16" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg">
+              <path d="M16 8C16 12.4183 12.4183 16 8 16C3.58172 16 0 12.4183 0 8C0 3.58172 3.58172 0 8 0C12.4183 0 16 3.58172 16 8ZM8.28709 5.90587C7.50897 6.22952 5.95383 6.89938 3.62167 7.91547C3.24296 8.06607 3.04458 8.2134 3.02652 8.35746C2.996 8.60092 3.30088 8.69679 3.71606 8.82734C3.77253 8.8451 3.83104 8.8635 3.89103 8.883C4.2995 9.01577 4.84896 9.17111 5.1346 9.17728C5.3937 9.18288 5.68289 9.07606 6.00217 8.85682C8.18118 7.38592 9.30599 6.64246 9.37661 6.62643C9.42643 6.61513 9.49547 6.60091 9.54225 6.64248C9.58903 6.68406 9.58443 6.7628 9.57947 6.78392C9.54927 6.91268 8.3525 8.02531 7.73316 8.6011C7.54008 8.78061 7.40312 8.90794 7.37513 8.93701C7.31241 9.00215 7.24849 9.06377 7.18706 9.12299C6.80758 9.48881 6.52301 9.76314 7.20282 10.2111C7.5295 10.4264 7.79091 10.6044 8.05171 10.782C8.33652 10.976 8.6206 11.1694 8.98815 11.4104C9.08179 11.4718 9.17122 11.5355 9.25833 11.5976C9.58979 11.8339 9.88757 12.0462 10.2555 12.0123C10.4692 11.9927 10.69 11.7917 10.8022 11.1922C11.0672 9.77535 11.5882 6.70556 11.7086 5.44057C11.7191 5.32974 11.7058 5.1879 11.6952 5.12564C11.6845 5.06337 11.6623 4.97466 11.5813 4.90899C11.4855 4.83121 11.3375 4.81481 11.2713 4.81597C10.9704 4.82128 10.5088 4.9818 8.28709 5.90587Z" />
+            </svg>
+            <a href="https://t.me/mAXxtor" target="_blank">@mAXxtor</a>
+          </li>
+        </ul>
+        <hr>
+        <ul class="vcard-details">
+          <li class="vcard-detail">
+            <svg viewBox="0 0 16 16" width="16" height="16" xmlns="http://www.w3.org/2000/svg">
+                <path d="M14.5455 0H1.45455C0.650909 0 0 0.650909 0 1.45455V14.5455C0 15.3491 0.650909 16 1.45455 16H14.5455C15.3491 16 16 15.3491 16 14.5455V1.45455C16 0.650909 15.3491 0 14.5455 0ZM5.05746 13.0909H2.912V6.18764H5.05746V13.0909ZM3.96291 5.20073C3.27127 5.20073 2.712 4.64 2.712 3.94982C2.712 3.25964 3.272 2.69964 3.96291 2.69964C4.65236 2.69964 5.21309 3.26036 5.21309 3.94982C5.21309 4.64 4.65236 5.20073 3.96291 5.20073ZM13.0938 13.0909H10.9498V9.73382C10.9498 8.93309 10.9353 7.90327 9.83491 7.90327C8.71855 7.90327 8.54691 8.77527 8.54691 9.67564V13.0909H6.40291V6.18764H8.46109V7.13091H8.49018C8.77673 6.58836 9.47636 6.016 10.52 6.016C12.6924 6.016 13.0938 7.44582 13.0938 9.30473V13.0909V13.0909Z"/>
+            </svg>
+            <a href="https://www.linkedin.com/in/maxxtor/" target="_blank">Linkedin.com/maxxtor</a>
+          </li>
+          <li class="vcard-detail">
+            <svg viewBox="0 0 16 16" width="16" height="16" xmlns="http://www.w3.org/2000/svg">
+              <path d="M8 0c4.42 0 8 3.58 8 8a8.013 8.013 0 0 1-5.45 7.59c-.4.08-.55-.17-.55-.38 0-.27.01-1.13.01-2.2 0-.75-.25-1.23-.54-1.48 1.78-.2 3.65-.88 3.65-3.95 0-.88-.31-1.59-.82-2.15.08-.2.36-1.02-.08-2.12 0 0-.67-.22-2.2.82-.64-.18-1.32-.27-2-.27-.68 0-1.36.09-2 .27-1.53-1.03-2.2-.82-2.2-.82-.44 1.1-.16 1.92-.08 2.12-.51.56-.82 1.28-.82 2.15 0 3.06 1.86 3.75 3.64 3.95-.23.2-.44.55-.51 1.07-.46.21-1.61.55-2.33-.66-.15-.24-.6-.83-1.23-.82-.67.01-.27.38.01.53.34.19.73.9.82 1.13.16.45.68 1.31 2.69.94 0 .67.01 1.3.01 1.49 0 .21-.15.45-.55.38A7.995 7.995 0 0 1 0 8c0-4.42 3.58-8 8-8Z"/>
+            </svg>
+            <a href="https://github.com/mAXxtor" target="_blank">Github.com/mAXxtor</a>
+          </li>
+          <li class="vcard-detail">
+            <svg viewBox="0 0 16 16" width="16" height="16" xmlns="http://www.w3.org/2000/svg">
+              <path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path>
+            </svg>
+            <a href="http://sadrobot.app" target="_blank">Sadrobot.app</a>
+          </li>
+        </ul>
+      </div>
+    </aside>
+    <nav class="nav-area">
       <ul>
         <li>Link 1</li>
         <li>Link 2</li>
