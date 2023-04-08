@@ -33,6 +33,7 @@
     --color-calendar-graph-day-L4-bg: #0a4208;
   }
 
+
   /* ==========================================================================
     Base styles: opinionated defaults
     ========================================================================== */
@@ -132,6 +133,9 @@
     text-decoration: underline;
   }
 
+  .subdued {
+    color: var(--text-subdued);
+  }
 
   /*
    * Remove text-shadow in selection highlight:
@@ -167,7 +171,7 @@
     margin: 1em 0;
     padding: 0;
   }
-  
+
 
   /*
    * Remove the gap between audio, canvas, iframes,
@@ -209,42 +213,60 @@
      App styles
      ========================================================================== */
 
-  .subdued {
-    color: var(--text-subdued);
-  }
-
   .grid-container {
     position: relative;
-    max-width: 1280px;
-    margin: auto;
-    padding: 0 1.5rem;
+
     display: grid;
     grid-template-columns: 22.5% auto 22.5%;
     grid-template-areas: "aside-col main-col nav-col";
     grid-gap: 1.5rem;
-  }
 
-  aside {
-    grid-area: aside-col;
+    max-width: 1280px;
+    margin: auto;
+    padding: 0 1.5rem;
   }
   
-  main {
+  .main-area {
     grid-area: main-col;
+    display: grid;
+    grid-gap: 1.5rem;
+
+    padding: 1.5rem 0;
   }
 
-  nav {
+  .aside-area {
+    position: relative;
+    grid-area: aside-col;
+    padding: 1.5rem 0;
+  }
+
+  .nav-area {
     grid-area: nav-col;    
   }
+
+  .surface {
+    background-color: var(--surface);
+    padding: 1.5em;
+    border-radius: 1rem;
+    border: 0.67px solid var(--divider);
+  }
+
+
+  /*
+   * Readme Section
+   */
+
+  .section-readme {}
+
+  .desired-position {
+    border-bottom: 0.67px solid var(--divider);
+  }
+
 
   .vcard-photo {
     max-width: 100%;
     border-radius: 1rem;
     border: 0.67px solid var(--divider);
-  }
-
-  aside {
-    position: relative;
-    padding: 1.5rem 0;
   }
   
   .vcard {
@@ -267,21 +289,6 @@
     fill: var(--text-subdued);
   }
 
-  main { 
-    padding: 1.5rem 0;
-  }
-
-  .surface {
-    background-color: var(--surface);
-    padding: 1.5em;
-    border-radius: 1rem;
-    border: 0.67px solid var(--divider);
-  }
-
-  .readme *:first-child {
-    margin-top: 0;
-  }
-
 
   /* ==========================================================================
      Github calendar styles
@@ -289,7 +296,6 @@
     
   .github-calendar {
     text-align: center;
-    margin: 2rem auto;
   }
   
   rect.ContributionCalendar-day[data-level='0'] {

@@ -5,28 +5,23 @@
   <title>CV Template</title>
   <meta name="description" content="">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-
   <link rel="icon" href="favicon.ico" sizes="any">
   <link rel="icon" href="icon.svg" type="image/svg+xml">
   <link rel="apple-touch-icon" href="icon.png">
-
   <link rel="stylesheet" href="normalize.css">
   <link rel="stylesheet" href="cv.css">
-
   <script type="application/javascript" src="github-calendar.min.js"></script>
-
   <meta name="theme-color" content="#fafafa">
 </head>
 <body>
   <div class="grid-container">
-    <main>
-      <section class="readme surface">
-        <h2>A backend python student from Russia</h2>
+    <main class="main-area">
+      <section class="section-readme surface">
+        <h1 class="desired-position">Python разработчик</h1>
         <ul>
           <li>🌱&nbsp;I’m currently learning Django Framework, DRF, Telegram Bot API</li>
           <li>📫&nbsp;How to reach me <a href="mailto:maxxtor21@gmail.com">maxxtor21@gmail.com</a>, <a href="mailto:maxxtor@yandex.ru">maxxtor@yandex.ru</a></li>
         </ul>
-
         <p class="subdued">Issues are used to track todos, bugs, feature requests, and more. As issues are created, they’ll appear here in a searchable and filterable list. To get started, you should create an issue.</p>
 
         <h3>Languages and Tools:</h3>
@@ -63,11 +58,37 @@
           </a>
         </p>
       </section>
-      <section class="github-calendar surface">
-        <!-- Loading stuff -->
-        Получаем данные с GitHub
+      <section class="section-github surface">
+        <div class="github-calendar">
+          Получаем данные от GitHub
+        </div>
       </section>
-      <section>
+      <section class="section-additional">
+        <h3>Дополнительная информация</h3>
+        <p>По роду деятельности работал с базами данных и формировал на их основании отчетность.
+          Для обработки больших массивов информации начал использовать инструменты
+          написанные на python. Их эффективность побудила начать изучение языка.
+          Впечатлившись возможностями python для решения прикладных задач решил связать свою
+          будущую деятельность с backend разработкой.</p>
+  
+          <p>
+            По теме смотрю Corey Schafer (разбор фреймворков), pajlada (увлекся написанием ботов),
+            Тимофей Хирьянов (алгоритмы и структуры данных), Гоша Дударь и читаю telegram каналы
+            для общего развития pythonist.ru, pythonetc.
+          </p>
+  
+          <p>
+            Всегда стараюсь найти компромиссы и точки соприкосновения с любым мнением. С
+            помощью этого успешно заключил более 40 договоров с юридическими лицами, также
+            расширил штат сотрудников на 10 человек.
+          </p>
+  
+          <p>
+            В свободное время занимаюсь сплавами на байдарках по местным поволжским рекам
+            (Волга, Медведица, Хопер).
+          </p>
+      </section>
+      <section class="hidden">
         <h1>A Visual Type Scale</h1>
 
 <p>What looked like a small patch of purple grass, above five feet square, was moving across the sand in their direction.</p>
@@ -111,7 +132,7 @@
 
 <p class="text_small">— Excerpt from A Voyage to Arcturus, by David Lindsay.</p>
       </section>
-      <section class="carier-path">
+      <section class="section-carier">
         <h2>Опыт работы</h2>
         <p>13 лет 9 месяцев</p>
         <hr>
@@ -174,7 +195,7 @@
         </article>
       </section>
     </main>
-    <aside>
+    <aside class="aside-area">
       <div class="vcard">
         <img class="vcard-photo" src="photo.jpg" alt="Max Verbitsky">
         <ul class="vcard-details">
@@ -229,7 +250,7 @@
         </ul>
       </div>
     </aside>
-    <nav>
+    <nav class="nav-area">
       <ul>
         <li>Link 1</li>
         <li>Link 2</li>
