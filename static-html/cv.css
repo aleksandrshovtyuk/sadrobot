@@ -262,6 +262,40 @@
     border-bottom: 0.67px solid var(--divider);
   }
 
+  .technologies {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 0;
+    list-style: none;
+  }
+
+  .technologies li {
+    margin: 0 0.5rem 0.5rem 0;
+  }
+
+  .technologies a {
+    display: block;
+    background: var(--background);
+    padding: 0.75rem;
+    border-radius: 0.5rem;
+  }
+
+  .technologies-other {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  .technologies-other li {
+    font-size: 14px;
+    display: inline-block;
+    padding: 4px 10px;
+    margin-right: 2px;
+    background: #22222e;
+    border-radius: 6px;
+    color: var(--text-subdued);
+  }
+
   /*
    * Carier Section
    */
