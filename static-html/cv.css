@@ -85,33 +85,33 @@
     font-weight: 600;
   }
   
-  h1 {
+  h1, .h1 {
     font-size: 2rem;
     line-height: 2.5rem;
     font-weight: 700;
   }
   
-  h2 {
+  h2, .h2 {
     font-size: 1.625rem;
     line-height: 2rem;
   }
   
-  h3 {
+  h3, .h3 {
     font-size: 1.375rem;
     line-height: 1.875rem;
   }
   
-  h4 {
+  h4, .h4 {
     font-size: 1.25rem;
     line-height: 1.75rem;
   }
   
-  h5 {
+  h5, .h4 {
     font-size: 1.125rem;
     line-height: 1.625rem;
   }
 
-  h6 {
+  h6, .h6 {
     font-size: 1rem;
   }
 
@@ -262,6 +262,35 @@
     border-bottom: 0.67px solid var(--divider);
   }
 
+  /*
+   * Carier Section
+   */
+
+  .section-carier {}
+  
+  .experience-title {
+    position: relative;
+  }
+
+  .work-duration {
+    position: absolute;
+    right: 0;
+    display: inline-block;
+    padding: 0 1rem;
+    font-size: 1rem;
+    font-weight: 400;
+    border-radius: 0.5rem;
+    background: var(--surface);
+  }
+
+
+  /*
+   * Additional info Section
+   */
+
+  .section-additional {
+
+  }
 
   .vcard-photo {
     max-width: 100%;
@@ -297,6 +326,11 @@
   .github-calendar {
     text-align: center;
   }
+
+  svg.js-calendar-graph-svg + div {
+    font-size: 1rem;
+    margin-top: 1rem;
+  }
   
   rect.ContributionCalendar-day[data-level='0'] {
       fill: var(--color-calendar-graph-day-bg);
@@ -331,7 +365,6 @@
   .contrib-legend {
       text-align: right;
       padding: 0 14px 10px 0;
-      display: inline-block;
       float: right;
   }
   
@@ -373,7 +406,8 @@
   }
   
   .table-column {
-      display: table-cell;
+      /* display: table-cell; */
+      display: none;
       width: 1%;
       padding-right: 10px;
       padding-left: 10px;
