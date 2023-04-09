@@ -2,7 +2,7 @@ version: '3.8'
 
 services:
   sadrobot:
-    image: maxxtor/sadrobot
+    image: maxxtor/sadrobot:latest
     restart: always
     volumes:
       - static_value:/app/static/
@@ -12,4 +12,10 @@ services:
 
 volumes:
   static_value:
+    driver: local
+    driver_opts:
+      type: 'none'
+      o: 'bind'
+      device: '/var/www/sadrobot.app/static/'
+
   media_value:
