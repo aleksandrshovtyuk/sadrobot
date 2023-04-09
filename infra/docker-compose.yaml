@@ -1,0 +1,15 @@
+version: '3.8'
+
+services:
+  sadrobot:
+    image: maxxtor/sadrobot
+    restart: always
+    volumes:
+      - static_value:/app/static/
+      - media_value:/app/media/
+    env_file:
+      - ./.env
+
+volumes:
+  static_value:
+  media_value:
