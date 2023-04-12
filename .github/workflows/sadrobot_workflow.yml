@@ -61,7 +61,7 @@ jobs:
         # passphrase: ${{ secrets.PASSPHRASE }}
         script: |
           set -m
-          cd foodgram
+          cd sadrobot
           rm -f .env
           sudo touch .env
           sudo chmod 666 .env
