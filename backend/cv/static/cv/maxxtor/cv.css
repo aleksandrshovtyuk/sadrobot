@@ -11,8 +11,8 @@
       --selection: #2b2b3c;
       --text: #d2dae4;
       --text-subdued: #818d9c;
-      --interactive: #6b6bcc;
-      --interactive-hovered: #6b6bcc;
+      --interactive: #7676d0;
+      --interactive-hovered: #9595db;
       --divider: #25252d;
   
       --font-family-sans: -apple-system, BlinkMacSystemFont, 'San Francisco', 'Segoe UI', 'Helvetica Neue', sans-serif;
@@ -73,12 +73,12 @@
       color: var(--text);
     }
   
-    p, ul, pre, table {
+    p, ul, dl, pre, table {
       margin: 0 0 1.428571428571429rem; /* 22px */
     }
   
     @media (min-width: 460px) {
-      p, ul, pre, table {
+      p, ul, dl, pre, table {
         margin: 0 0 1.5rem; /* 24px */
       }
     }
@@ -133,7 +133,6 @@
   
     a:hover {
       color: var(--interactive-hovered);
-      text-decoration: underline;
     }
   
     small, .small {
@@ -223,29 +222,26 @@
   
     .grid-container {
       position: relative;
-  
       display: grid;
-      grid-template-columns: 22.5% auto 22.5%;
+      grid-template-columns: 23% auto 23%;
       grid-template-areas: "aside-col main-col nav-col";
-      grid-gap: 1.5rem;
-  
+      grid-gap: 2rem;
       max-width: 1280px;
       margin: auto;
-      padding: 0 1.5rem;
+      padding: 0 2rem;
     }
     
     .main-area {
       grid-area: main-col;
       display: grid;
       grid-gap: 1.5rem;
-  
-      padding: 1.5rem 0;
+      padding: 2rem 0 3rem 0;
     }
   
     .aside-area {
       position: relative;
       grid-area: aside-col;
-      padding: 1.5rem 0;
+      padding: 2rem 0;
     }
   
     .nav-area {
@@ -261,13 +257,90 @@
   
   
     /*
+     * Aside Section
+     */
+  
+     .vcard-photo {
+      max-width: 100%;
+      border-radius: 1rem;
+      border: 0.67px solid var(--divider);
+    }
+    
+    .vcard {
+      position: sticky;
+      top: 2rem;
+    }
+  
+    .vcard hr {
+      margin: 1.5rem;
+    }
+  
+    .vcard-details {
+      margin: 0;
+      padding: 0 0 0 1.5rem;
+      list-style: none;
+    }
+  
+    .vcard-detail svg {
+      margin-right: .5rem;
+      fill: var(--text-subdued);
+    }
+  
+  
+    /*
+     * Navigation
+     */
+  
+    .nav-list  {
+      position: sticky;
+      top: 2rem;
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+  
+    .subnav-list {
+      margin: 1rem 0 1rem 1rem;
+      padding: 0;
+      list-style: none;
+      border-left: 0.67px solid var(--divider);
+    }
+  
+    .subnav-list li {
+      margin-left: 0.5rem;
+    }
+  
+    .nav-link {
+      display: inline-block;
+      padding: 0.375rem 1rem;
+      font-weight: 600;
+      border-radius: 0.5rem;
+    }
+  
+    .subnav-list .nav-link {
+      font-weight: normal;
+    }
+  
+    .nav-link:hover {
+      text-decoration: none;
+      background: var(--surface);
+      color: var(--interactive-hovered);
+    }
+  
+  
+    /*
      * Readme Section
      */
   
     .desired-position {
       border-bottom: 0.67px solid var(--divider);
-      padding-bottom: 1.25rem;
+      padding-bottom: 1.5rem;
       margin-top: 0;
+      margin-bottom: 1.5rem;
+    }
+  
+    .desired-position::after {
+        content: " 🐍❤️";
     }
   
     .technologies {
@@ -314,6 +387,10 @@
       position: relative;
     }
   
+    .experience-title::after {
+      content: " 🤙";
+    }
+  
     .work-duration {
       position: absolute;
       right: 0;
@@ -357,6 +434,8 @@
     .projects {
         border-radius: 0.875rem;
         border: 0.67px solid var(--divider);
+        background: var(--surface);
+        overflow: hidden;
     }
   
     .project-item {
@@ -374,33 +453,32 @@
   
   
     /*
-     * Additional info Section
+     * Education Section
      */
   
-    .vcard-photo {
-      max-width: 100%;
-      border-radius: 1rem;
-      border: 0.67px solid var(--divider);
-    }
-    
-    .vcard {
-      position: sticky;
-      top: 1.5rem;
+    .education-title::after {
+      content: " 🎓";
     }
   
-    .vcard hr {
-      margin: 1.5rem;
+    .study-point {
+      display: flex;
+      margin-bottom: 0;
+      padding: 1rem 0;
+      border-bottom: 0.67px solid var(--divider);
     }
   
-    .vcard-details {
+    .study-point.university  {
+      border: none;
+    }
+  
+    .study-point dd {
+      flex-shrink: 0;
+      width: 6rem;
       margin: 0;
-      padding: 0 0 0 1.5rem;
-      list-style: none;
     }
   
-    .vcard-detail svg {
-      margin-right: .5rem;
-      fill: var(--text-subdued);
+    .study-point dt span {
+      display: block;
     }
   
   
