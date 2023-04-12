@@ -471,7 +471,7 @@
     border: none;
   }
 
-  .study-point dd {
+  .study-point dt {
     flex-shrink: 0;
     width: 6rem;
     margin: 0;
