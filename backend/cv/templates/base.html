@@ -2,12 +2,18 @@
 
 <!doctype html>
 <html lang="ru" prefix="og: https://ogp.me/ns#">
-<head> {% include "includes/header.html" %} </head>
+<head> {% include "includes/html-head.html" %} </head>
 <body>
   <div id="top" class="grid-container">
-    <main class="main-area"> {% block content %}{% endblock %} </main>
-    <aside class="aside-area"> {% block left_side %}{% endblock %} </aside>
-    <nav class="nav-area"> {% include "includes/nav.html" %} </nav>
+    <main class="main-area">
+      {% block content %}{% endblock %}
+    </main>
+    <aside class="aside-area">
+      {% block left_side %}{% endblock %}
+    </aside>
+    <nav class="nav-area">
+      {% include "includes/nav.html" %}
+    </nav>
   </div>
   <script src="{% static 'cv/maxxtor/github-calendar.min.js' %}"></script>
   <script>
