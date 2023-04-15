@@ -5,822 +5,987 @@
     Variables: tokens for styling layouts
     ========================================================================== */
 
-  :root {
-    --background: #111118;
-    --surface: #171721;
-    --selection: #2b2b3c;
-    --text: #d2dae4;
-    --text-subdued: #818d9c;
-    --interactive: #7676d0;
-    --interactive-hovered: #9595db;
-    --divider: #25252d;
-
-    --font-family-sans: -apple-system, BlinkMacSystemFont, 'San Francisco', 'Segoe UI', 'Helvetica Neue', sans-serif;
-    
-    --fz-mobile: 0.875rem;                        /* 14px */
-    --lh-mobile: 1.571428571428571;               /* 22px/14px */
-
-    --fz-tablet-up: 1rem;                         /* 16px */
-    --lh-tablet-up: 1.5;                          /* 24px/16px */
-
-    --fz-large-desktop-up: 1.125rem;              /* 18px */
-    --lh-large-desktop-up: 1.444444444444444;     /* 26px/18px */
-
-    --fz-small: 0.875rem;                         /* 14px */
-    --lh-small: 1.571428571428571;                /* 22px/14px */    
-
-    --color-calendar-graph-day-bg: var(--selection);
-    --color-calendar-graph-day-L1-bg: #39dd34;
-    --color-calendar-graph-day-L2-bg: #45a045;
-    --color-calendar-graph-day-L3-bg: #047526;
-    --color-calendar-graph-day-L4-bg: #0a4208;
-  }
-
-
-  /* ==========================================================================
-    Base styles: opinionated defaults
-    ========================================================================== */
-
-  html {
-    font-size: var(--fz-mobile);
-    line-height: var(--lh-mobile);
-  }
-
-  @media (min-width: 460px) {
-      html {
-        font-size: var(--fz-tablet-up);
-        line-height: var(--lh-tablet-up);
-      }
-  }
-
-  /* @media (min-width: 1280px) {
-    html {
-      font-size: var(--fz-desktop-up);
-      line-height: var(--lh-tablet-up);
+    :root {
+      --background: #111118;
+      --background-hover: #0d0d12;
+      --surface: #171721;
+      --selection: #2b2b3c;
+      --text: #d2dae4;
+      --text-subdued: #818d9c;
+      --interactive: #7676d0;
+      --interactive-hovered: #9595db;
+      --divider: #25252d;
+  
+      --font-family-sans: -apple-system, BlinkMacSystemFont, 'San Francisco', 'Segoe UI', 'Helvetica Neue', sans-serif;
+      
+      --fz-mobile: 0.875rem;                        /* 14px */
+      --lh-mobile: 1.571428571428571;               /* 22px/14px */
+  
+      --fz-tablet-up: 1rem;                         /* 16px */
+      --lh-tablet-up: 1.5;                          /* 24px/16px */
+  
+      --fz-large-desktop-up: 1.125rem;              /* 18px */
+      --lh-large-desktop-up: 1.444444444444444;     /* 26px/18px */
+  
+      --fz-small: 0.875rem;                         /* 14px */
+      --lh-small: 1.571428571428571;                /* 22px/14px */
+      
+      --bp-tablet-up: 490px;
+      --bp-desktop-up: 1280px;
+      --bp-large-desktop-up: 1920px;
+  
+      --color-calendar-graph-day-bg: var(--selection);
+      --color-calendar-graph-day-L1-bg: #39dd34;
+      --color-calendar-graph-day-L2-bg: #45a045;
+      --color-calendar-graph-day-L3-bg: #047526;
+      --color-calendar-graph-day-L4-bg: #0a4208;
     }
-  }
-
-  @media (min-width: 1440px) {
+  
+  
+    /* ==========================================================================
+      Base styles: opinionated defaults
+      ========================================================================== */
+  
     html {
-      font-size: var(--fz-large-desktop-up);
-      line-height: var(--lh-large-desktop-up);
+      font-size: var(--fz-mobile);
+      line-height: var(--lh-mobile);
     }
-  } */
-
-  body {
-    font-family: var(--font-family-sans);
-    background-color: var(--background);
-    color: var(--text);
-  }
-
-  p, ul, dl, pre, table {
-    margin: 0 0 1.428571428571429rem; /* 22px */
-  }
-
-  @media (min-width: 460px) {
+  
+    @media (min-width: 490px) {
+        html {
+          font-size: var(--fz-tablet-up);
+          line-height: var(--lh-tablet-up);
+        }
+    }
+  
+    body {
+      font-family: var(--font-family-sans);
+      background-color: var(--background);
+      color: var(--text);
+    }
+  
     p, ul, dl, pre, table {
-      margin: 0 0 1.5rem; /* 24px */
+      margin: 0 0 1.428571428571429rem; /* 22px */
     }
-  }
-
-  h1, h2, h3, h4, h5, h6 {
-    margin: 2.25rem 0 1.25rem;
-    font-weight: 600;
-  }
   
-  h1, .h1 {
-    font-size: 2rem;
-    line-height: 2.5rem;
-    font-weight: 700;
-  }
+    @media (min-width: 490px) {
+      p, ul, dl, pre, table {
+        margin: 0 0 1.5rem; /* 24px */
+      }
+    }
   
-  h2, .h2 {
-    font-size: 1.625rem;
-    line-height: 2rem;
-  }
-  
-  h3, .h3 {
-    font-size: 1.375rem;
-    line-height: 1.875rem;
-  }
-  
-  h4, .h4 {
-    font-size: 1.25rem;
-    line-height: 1.75rem;
-  }
-  
-  h5, .h5 {
-    font-size: 1.125rem;
-    line-height: 1.625rem;
-  }
-
-  h6, .h6 {
-    font-size: 1rem;
-  }
-
-  ul li {
-    margin-bottom: .5rem;
-  }
-
-  ul li:last-child {
-    margin-bottom: 0;
-  }
-
-  a {
-    color: var(--interactive);
-    text-decoration: none;
-  }
-
-  a:hover {
-    color: var(--interactive-hovered);
-  }
-
-  small, .small {
-    font-size: var(--fz-small);
-    line-height: var(--lh-small);
-  }
-
-  .subdued {
-    color: var(--text-subdued);
-  }
-
-  /*
-   * Remove text-shadow in selection highlight:
-   * https://twitter.com/miketaylr/status/12228805301
-   *
-   * Customize the background color to match your design.
-   */
-  
-  ::-moz-selection {
-    background: var(--selection);
-    text-shadow: none;
-  }
-  
-  ::selection {
-    background: var(--selection);
-    text-shadow: none;
-  }
-
-  img::selection {
-    background: var(--text-color);
-    text-shadow: none;
-  }
-  
-  /*
-   * A better looking default horizontal rule
-   */
-  
-  hr {
-    display: block;
-    height: 1px;
-    border: 0;
-    border-top: 0.67px solid var(--divider);
-    margin: 1em 0;
-    padding: 0;
-  }
-
-
-  /*
-   * Remove the gap between audio, canvas, iframes,
-   * images, videos and the bottom of their containers:
-   * https://github.com/h5bp/html5-boilerplate/issues/440
-   */
-  
-  audio,
-  canvas,
-  iframe,
-  img,
-  svg,
-  video {
-    vertical-align: middle;
-  }
-  
-
-  /*
-   * Remove default fieldset styles.
-   */
-  
-  fieldset {
-    border: 0;
-    margin: 0;
-    padding: 0;
-  }
-  
-
-  /*
-   * Allow only vertical resizing of textareas.
-   */
-  
-  textarea {
-    resize: vertical;
-  }
-
-  
-  /* ==========================================================================
-     App styles
-     ========================================================================== */
-
-  .grid-container {
-    position: relative;
-    display: grid;
-    grid-template-columns: 23% auto 23%;
-    grid-template-areas: "aside-col main-col nav-col";
-    grid-gap: 2rem;
-    max-width: 1280px;
-    margin: auto;
-    padding: 0 2rem;
-  }
-  
-  .main-area {
-    grid-area: main-col;
-    display: grid;
-    grid-gap: 1.5rem;
-    padding: 2rem 0 3rem 0;
-  }
-
-  .aside-area {
-    position: relative;
-    grid-area: aside-col;
-    padding: 2rem 0;
-  }
-
-  .nav-area {
-    grid-area: nav-col;    
-  }
-
-  .surface {
-    background-color: var(--surface);
-    padding: 1.5em;
-    border-radius: 1rem;
-    border: 0.67px solid var(--divider);
-  }
-
-
-  /*
-   * Aside Section
-   */
-
-   .vcard-photo {
-    max-width: 100%;
-    border-radius: 1rem;
-    border: 0.67px solid var(--divider);
-  }
-  
-  .vcard {
-    position: sticky;
-    top: 2rem;
-  }
-
-  .vcard hr {
-    margin: 1.5rem;
-  }
-
-  .vcard-details {
-    margin: 0;
-    padding: 0 0 0 1.5rem;
-    list-style: none;
-  }
-
-  .vcard-detail svg {
-    margin-right: .5rem;
-    fill: var(--text-subdued);
-  }
-
-
-  /*
-   * Navigation
-   */
-
-  .nav-list  {
-    position: sticky;
-    top: 2rem;
-    margin: 0;
-    padding: 0;
-    list-style: none;
-  }
-
-  .subnav-list {
-    margin: 1rem 0 1rem 1rem;
-    padding: 0;
-    list-style: none;
-    border-left: 0.67px solid var(--divider);
-  }
-
-  .subnav-list li {
-    margin-left: 0.5rem;
-  }
-
-  .nav-link {
-    display: inline-block;
-    padding: 0.375rem 1rem;
-    font-weight: 600;
-    border-radius: 0.5rem;
-  }
-
-  .subnav-list .nav-link {
-    font-weight: normal;
-  }
-
-  .nav-link:hover {
-    text-decoration: none;
-    background: var(--surface);
-    color: var(--interactive-hovered);
-  }
-
-
-  /*
-   * Readme Section
-   */
-
-  .desired-position {
-    border-bottom: 0.67px solid var(--divider);
-    padding-bottom: 1.5rem;
-    margin-top: 0;
-    margin-bottom: 1.5rem;
-  }
-
-  .desired-position::after {
-      content: " 🐍❤️";
-  }
-
-  .technologies {
-    display: flex;
-    flex-wrap: wrap;
-    padding: 0;
-    list-style: none;
-  }
-
-  .technologies li {
-    margin: 0 0.5rem 0.5rem 0;
-  }
-
-  .technologies a {
-    display: block;
-    background: var(--background);
-    padding: 0.75rem;
-    border-radius: 0.75rem;
-    text-decoration: none;
-  }
-
-  .technologies-other {
-    margin: 0;
-    padding: 0;
-    list-style: none;
-  }
-
-  .technologies-other li {
-    font-size: 0.875rem;
-    display: inline-block;
-    padding: 0.25rem 0.5rem;
-    margin-right: 2px;
-    background: #22222e;
-    border-radius: 6px;
-    color: var(--text-subdued);
-  }
-
-
-  /*
-   * Carier Section
-   */
-  
-  .experience-title {
-    position: relative;
-  }
-
-  .experience-title::after {
-    content: " 🤙";
-  }
-
-  .work-duration {
-    position: absolute;
-    right: 0;
-    display: inline-block;
-    padding: 0 1rem;
-    font-size: 1rem;
-    font-weight: 400;
-    border-radius: 0.5rem;
-    background: var(--surface);
-  }
-
-  .carier-path {
-    margin-bottom: 2.25rem;
-    border-radius: 1rem;    
-    border: 0.67px solid var(--divider);
-    overflow: hidden;
-  }
-
-  .carier-path:last-child {
-    margin-bottom: 0;
-  }
-
-  .position-header {
-    padding: 1.5rem;
-    border-bottom: 0.67px solid var(--divider);
-    background: var(--surface);
-  }
-
-  .position-title {
-    margin: 0 0 0.25rem 0;
-  }
-
-  .work-period {
-    margin: 0;
-  }
-
-  .carier-path .section-inner {
-    padding: 1.5rem;
-  }
-
-  .projects {
-      border-radius: 0.875rem;
-      border: 0.67px solid var(--divider);
-      background: var(--surface);
-      overflow: hidden;
-  }
-
-  .project-item {
-    padding: 1.5rem;
-    border-bottom: 0.67px solid var(--divider);;
-  }
-
-  .project-item:last-child {
-    border-bottom: none;
-  }
-
-  .project-title {
-    margin-top: 0;
-  }
-
-
-  /*
-   * Education Section
-   */
-
-  .education-title::after {
-    content: " 🎓";
-  }
-
-  .study-point {
-    display: flex;
-    margin-bottom: 0;
-    padding: 1rem 0;
-    border-bottom: 0.67px solid var(--divider);
-  }
-
-  .study-point.university  {
-    border: none;
-  }
-
-  .study-point dt {
-    flex-shrink: 0;
-    width: 6rem;
-    margin: 0;
-  }
-
-  .study-point dt span {
-    display: block;
-  }
-
-
-  /* ==========================================================================
-     Github calendar styles
-     ========================================================================== */
+    h1, h2, h3, h4, h5, h6 {
+      margin: 2.25rem 0 1.25rem;
+      font-weight: 600;
+    }
     
-  .github-calendar {
-    text-align: center;
-  }
-
-  svg.js-calendar-graph-svg + div {
-    font-size: 1rem;
-    margin-top: 1rem;
-  }
-  
-  rect.ContributionCalendar-day[data-level='0'] {
-      fill: var(--color-calendar-graph-day-bg);
-  }
-  
-  rect.ContributionCalendar-day[data-level='1'] {
-      fill: var(--color-calendar-graph-day-L1-bg);
-  }
-  
-  rect.ContributionCalendar-day[data-level='2'] {
-      fill: var(--color-calendar-graph-day-L2-bg);
-  }
-  
-  rect.ContributionCalendar-day[data-level='3'] {
-      fill: var(--color-calendar-graph-day-L3-bg);
-  }
-  
-  rect.ContributionCalendar-day[data-level='4'] {
-      fill: var(--color-calendar-graph-day-L4-bg);
-  }
-  
-  .github-calendar .width-full > .float-left {
-      display: none;
-  }
-  
-  .calendar-graph text.wday,
-  .calendar-graph text.month {
-      font-size: 10px;
-      fill: #aaa;
-  }
-  
-  .contrib-legend {
-      text-align: right;
-      padding: 0 14px 10px 0;
-      float: right;
-  }
-  
-  .contrib-legend .legend {
-      display: inline-block;
-      list-style: none;
-      margin: 0 5px;
-      position: relative;
-      bottom: -1px;
-      padding: 0;
-  }
-  
-  .contrib-legend .legend li {
-      display: inline-block;
-      width: 10px;
-      height: 10px;
-  }
-  
-  .text-small {
-      font-size: 12px;
-      color: #767676;
-  }
-  
-  .calendar-graph {
-      padding: 5px 0 0;
-      text-align: center;
-  }
-  
-  .contrib-column {
-      padding: 15px 0;
-      text-align: center;
-      border-left: 0.67px solid #25252d;
-      border-top: 0.67px solid #25252d;
-      font-size: 11px;
-  }
-  
-  .contrib-column-first {
-      border-left: 0;
-  }
-  
-  .table-column {
-      /* display: table-cell; */
-      display: none;
-      width: 1%;
-      padding-right: 10px;
-      padding-left: 10px;
-      vertical-align: top;
-  }
-  
-  .contrib-number {
-      font-weight: 300;
-      line-height: 1.3em;
-      font-size: 24px;
-      display: block;
-  }
-  
-  .github-calendar img.spinner {
-      width: 70px;
-      margin-top: 50px;
-      min-height: 70px;
-  }
-  
-  .monospace {
-      text-align: center;
-      color: #000;
-      font-family: monospace;
-  }
-  
-  .monospace a {
-      color: #1D75AB;
-      text-decoration: none;
-  }
-  
-  .contrib-footer {
-      font-size: 11px;
-      padding: 0 10px 12px;
-      text-align: left;
-      width: 100%;
-      box-sizing: border-box;
-      height: 26px;
-  }
-  
-  .left.text-muted {
-      float: left;
-      margin-left: 9px;
-      color: #767676;
-  }
-  .left.text-muted a {
-      color: #4078c0;
-      text-decoration: none;
-  }
-  .left.text-muted a:hover,
-  .monospace a:hover {
-      text-decoration: underline;
-  }
-  
-  h2.f4.text-normal.mb-3 {
-      display: none;
-  }
-  
-  .float-left.text-gray {
-      float: left;
-  }
-  #user-activity-overview{
-      display:none;
-  }
-  
-  .day-tooltip {
-      white-space: nowrap;
-      position: absolute;
-      z-index: 99999;
-      padding: 10px;
-      font-size: 12px;
-      color: #959da5;
-      text-align: center;
-      background: rgba(0,0,0,.85);
-      border-radius: 3px;
-      display: none;
-      pointer-events: none;
-  }
-  .day-tooltip strong {
-      color: #dfe2e5;
-  }
-  .day-tooltip.is-visible {
-      display: block;
-  }
-  .day-tooltip:after {
-      position: absolute;
-      bottom: -10px;
-      left: 50%;
-      width: 5px;
-      height: 5px;
-      box-sizing: border-box;
-      margin: 0 0 0 -5px;
-      content: " ";
-      border: 5px solid transparent;
-      border-top-color: rgba(0,0,0,.85)
-  }
-  
-  text.ContributionCalendar-label {
-      fill: #ccc;
-      font-size: 11px;
-  }
-  
-  /* ==========================================================================
-     Helper classes
-     ========================================================================== */
-  
-  /*
-   * Hide visually and from screen readers
-   */
-  
-  .hidden,
-  [hidden] {
-    display: none !important;
-  }
-  
-  /*
-   * Hide only visually, but have it available for screen readers:
-   * https://snook.ca/archives/html_and_css/hiding-content-for-accessibility
-   *
-   * 1. For long content, line feeds are not interpreted as spaces and small width
-   *    causes content to wrap 1 word per line:
-   *    https://medium.com/@jessebeach/beware-smushed-off-screen-accessible-text-5952a4c2cbfe
-   */
-  
-  .visually-hidden {
-    border: 0;
-    clip: rect(0, 0, 0, 0);
-    height: 1px;
-    margin: -1px;
-    overflow: hidden;
-    padding: 0;
-    position: absolute;
-    white-space: nowrap;
-    width: 1px;
-    /* 1 */
-  }
-  
-  /*
-   * Extends the .visually-hidden class to allow the element
-   * to be focusable when navigated to via the keyboard:
-   * https://www.drupal.org/node/897638
-   */
-  
-  .visually-hidden.focusable:active,
-  .visually-hidden.focusable:focus {
-    clip: auto;
-    height: auto;
-    margin: 0;
-    overflow: visible;
-    position: static;
-    white-space: inherit;
-    width: auto;
-  }
-  
-  /*
-   * Hide visually and from screen readers, but maintain layout
-   */
-  
-  .invisible {
-    visibility: hidden;
-  }
-  
-  /*
-   * Clearfix: contain floats
-   *
-   * The use of `table` rather than `block` is only necessary if using
-   * `::before` to contain the top-margins of child elements.
-   */
-  
-  .clearfix::before,
-  .clearfix::after {
-    content: "";
-    display: table;
-  }
-  
-  .clearfix::after {
-    clear: both;
-  }
-  
- 
-  /* ==========================================================================
-     Print styles.
-     Inlined to avoid the additional HTTP request:
-     https://www.phpied.com/delay-loading-your-print-css/
-     ========================================================================== */
+    h1, .h1 {
+      font-size: 2rem;
+      line-height: 2.5rem;
+      font-weight: 700;
+    }
     
-  @media print,
-    (-webkit-min-device-pixel-ratio: 1.25),
-    (min-resolution: 1.25dppx),
-    (min-resolution: 120dpi) {
-    /* Style adjustments for high resolution devices */
-  }
-
-  @media print {
-    *,
-    *::before,
-    *::after {
-      background: #fff !important;
-      color: #000 !important;
-      /* Black prints faster */
-      box-shadow: none !important;
-      text-shadow: none !important;
+    h2, .h2 {
+      font-size: 1.625rem;
+      line-height: 2rem;
+    }
+    
+    h3, .h3 {
+      font-size: 1.375rem;
+      line-height: 1.875rem;
+    }
+    
+    h4, .h4 {
+      font-size: 1.25rem;
+      line-height: 1.75rem;
+    }
+    
+    h5, .h5 {
+      font-size: 1.125rem;
+      line-height: 1.625rem;
     }
   
-    a,
-    a:visited {
-      text-decoration: underline;
+    h6, .h6 {
+      font-size: 1rem;
     }
   
-    a[href]::after {
-      content: " (" attr(href) ")";
+    ul li {
+      margin-bottom: .5rem;
     }
   
-    abbr[title]::after {
-      content: " (" attr(title) ")";
+    ul li:last-child {
+      margin-bottom: 0;
+    }
+  
+    a {
+      color: var(--interactive);
+      text-decoration: none;
+    }
+  
+    a:hover {
+      color: var(--interactive-hovered);
+    }
+  
+    small, .small {
+      font-size: var(--fz-small);
+      line-height: var(--lh-small);
+    }
+  
+    .subdued {
+      color: var(--text-subdued);
     }
   
     /*
-     * Don't show links that are fragment identifiers,
-     * or use the `javascript:` pseudo protocol
+     * Remove text-shadow in selection highlight:
+     * https://twitter.com/miketaylr/status/12228805301
+     *
+     * Customize the background color to match your design.
      */
-    a[href^="#"]::after,
-    a[href^="javascript:"]::after {
+    
+    ::-moz-selection {
+      background: var(--selection);
+      text-shadow: none;
+    }
+    
+    ::selection {
+      background: var(--selection);
+      text-shadow: none;
+    }
+  
+    img::selection {
+      background: var(--text-color);
+      text-shadow: none;
+    }
+    
+    /*
+     * A better looking default horizontal rule
+     */
+    
+    hr {
+      display: block;
+      height: 1px;
+      border: 0;
+      border-top: 0.67px solid var(--divider);
+      margin: 1em 0;
+      padding: 0;
+    }
+  
+  
+    /*
+     * Remove the gap between audio, canvas, iframes,
+     * images, videos and the bottom of their containers:
+     * https://github.com/h5bp/html5-boilerplate/issues/440
+     */
+    
+    audio,
+    canvas,
+    iframe,
+    img,
+    svg,
+    video {
+      vertical-align: middle;
+    }
+    
+  
+    /*
+     * Remove default fieldset styles.
+     */
+    
+    fieldset {
+      border: 0;
+      margin: 0;
+      padding: 0;
+    }
+    
+  
+    /*
+     * Allow only vertical resizing of textareas.
+     */
+    
+    textarea {
+      resize: vertical;
+    }
+  
+    
+    /* ==========================================================================
+       App styles
+       ========================================================================== */
+  
+    .surface {
+      background-color: var(--surface);
+      padding: 1.428571428571429rem;
+      border-radius: 1rem;
+      border: 0.67px solid var(--divider);
+    }
+  
+    @media (min-width: 490px) {
+      .surface {
+        padding: 1.5rem;
+      }
+    }
+  
+    .grid-container {
+      display: grid;
+      grid-template-areas: "aside-col" "main-col" "nav-col";
+      grid-gap: 1.428571428571429rem;
+      padding: 1.428571428571429rem;
+    }
+  
+    @media (min-width: 490px) {
+      .grid-container {
+        grid-gap: 1.5rem;
+        padding: 1.5rem;
+      }
+    }
+  
+    @media (min-width: 992px) {
+      .grid-container {
+        position: relative;
+        grid-template-columns: 28% auto;
+        grid-template-areas: "aside-col main-col";
+        grid-gap: 1.5rem;
+        padding: 1.5rem 3rem;
+      }
+    }
+  
+    @media (min-width: 1280px) {
+      .grid-container {
+        position: relative;
+        max-width: 1400px;
+        margin: auto;
+        grid-template-columns: 22% auto 22%;
+        grid-template-areas: "aside-col main-col nav-col";
+        grid-gap: 1.5rem;
+      }
+    }
+    
+    .main-area {
+      grid-area: main-col;
+      display: grid;
+      grid-gap: 1.428571428571429rem;
+    }
+  
+    @media (min-width: 490px) {
+      .main-area {
+        grid-gap: 1.5rem;
+      }
+    }
+  
+    .aside-area {
+      position: relative;
+      grid-area: aside-col;
+    }
+  
+    .nav-area {
+      display: none; 
+    }
+  
+    @media (min-width: 1280px) {
+      .nav-area {
+        display: block;
+        grid-area: nav-col;    
+      }
+    }
+  
+  
+    /*
+     * Aside Section
+     */
+  
+    .vcard {
+      position: sticky;
+      top: 1.5rem;
+    }
+  
+    .its-me {
+      display: grid;
+      grid-template-columns: 5.714285714285714rem auto;
+      grid-gap: 1.428571428571429rem;
+      align-items: center;
+      margin-bottom: 1.428571428571429rem;
+    }
+  
+    @media (min-width: 490px) {
+      .its-me {
+        grid-template-columns: 5.5rem auto;
+        grid-gap: 1.5rem;
+        margin-bottom: 1.5rem;
+      }
+    }
+  
+    @media (min-width: 1280px) {
+      .its-me {
+        grid-template-columns: 100%;
+        grid-gap: 0;
+        margin: 0;
+      }
+    }
+  
+    @media (min-width: 1280px) {
+      .vcard-details {
+        border-top-left-radius: 0;
+        border-top-right-radius: 0;
+      }
+    }
+  
+    .vcard-photo {
+      max-width: 100%;
+      border-radius: 1rem;
+    }
+  
+    @media (min-width: 1280px) {
+      .vcard-photo {
+        border-radius: 1rem 1rem 0 0;
+      }
+    }
+  
+    .vcard-name {
+      margin: 0;
+    }
+  
+    @media (min-width: 1280px) {
+      .vcard-name {
+        display: none;
+      }
+    }
+  
+    .vcard-detail.name {
+      display: none;
+    }
+  
+    @media (min-width: 1280px) {
+      .vcard-detail.name {
+        display: block;
+        margin-bottom: 1.25rem;
+        font-size: 1.375rem;
+        line-height: 1.875rem;
+        font-weight: 600;
+      }
+    }
+  
+    .vcard-divider {
+      margin: 1rem 0;
+      height: 0;
+      border-top: 0.67px solid var(--divider);
+    }
+  
+    .vcard-links {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+  
+    .vcard-links svg {
+      margin-right: .5rem;
+      fill: var(--text-subdued);
+    }
+  
+  
+    /*
+     * Navigation
+     */
+  
+    .nav-list  {
+      position: sticky;
+      top: 1.5rem;
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+  
+    .subnav-list {
+      margin: 1rem 0 1rem 1rem;
+      padding: 0;
+      list-style: none;
+      border-left: 0.67px solid var(--divider);
+    }
+  
+    .subnav-list li {
+      margin-left: 0.5rem;
+    }
+  
+    .nav-link {
+      display: inline-block;
+      padding: 0.375rem 1rem;
+      font-weight: 600;
+      border-radius: 0.5rem;
+    }
+  
+    .subnav-list .nav-link {
+      font-weight: normal;
+    }
+  
+    .nav-link:hover {
+      text-decoration: none;
+      background: var(--surface);
+      color: var(--interactive-hovered);
+    }
+  
+  
+    /*
+     * Readme Section
+     */
+  
+    .desired-position {
+      border-bottom: 0.67px solid var(--divider);
+      padding-bottom: 1.428571428571429rem;
+      margin-top: 0;
+      margin-bottom: 1.428571428571429rem;
+    }
+  
+    @media (min-width: 490px) {
+      .desired-position {
+        padding-bottom: 1.5rem;
+        margin-bottom: 1.5rem;
+      }
+    }
+  
+    .desired-position::after {
+        content: " 🐍❤️";
+    }
+  
+    .technologies {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      grid-gap: 0.5rem;
+      padding: 0;
+      list-style: none;
+    }
+  
+    @media (min-width: 576px) {
+      .technologies {
+        grid-template-columns: repeat(6, 1fr);
+      }
+    }
+  
+    .technologies li {
+      margin: 0;
+    }
+  
+    .technologies a {
+      display: block;
+      background: var(--background);
+      padding: 0.75rem;
+      border-radius: 0.75rem;
+      text-decoration: none;
+      text-align: center;
+    }
+    .technologies a:hover {
+      background: var(--background-hover);
+    }
+  
+    @media (min-width: 576px) {
+      .technologies a {
+        padding: 1rem;
+      }
+    }
+  
+    .technologies-other {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+  
+    .technologies-other li {
+      font-size: 0.875rem;
+      display: inline-block;
+      padding: 0.25rem 0.5rem;
+      margin-right: 2px;
+      background: #22222e;
+      border-radius: 6px;
+      color: var(--text-subdued);
+    }
+  
+    
+    /*
+     * Github Section
+     */
+  
+    .section-github {
+      display: none;
+    }
+  
+    @media (min-width: 768px) {
+      .section-github {
+        display: block;
+      }
+    }
+  
+  
+    /*
+     * Carier Section
+     */
+    
+    .experience-title {
+      position: relative;
+    }
+  
+    .experience-title::after {
+      content: " 🤙";
+    }
+  
+    .work-duration {
+      display: none;
+    }
+  
+    @media (min-width: 490px) {
+      .work-duration {
+        position: absolute;
+        right: 0;
+        display: inline-block;
+        padding: 0 1rem;
+        font-size: 1rem;
+        font-weight: 400;
+        border-radius: 0.5rem;
+        background: var(--surface);
+      }
+    }
+  
+    .carier-path {
+      margin-bottom: 2.25rem;
+      border-radius: 1rem;    
+      border: 0.67px solid var(--divider);
+      overflow: hidden;
+    }
+  
+    .carier-path:last-child {
+      margin-bottom: 0;
+    }
+  
+    .position-header {
+      padding: 1.428571428571429rem;
+      border-bottom: 0.67px solid var(--divider);
+      background: var(--surface);
+    }
+  
+    @media (min-width: 490px) {
+      .position-header {
+        padding: 1.5rem;
+      }
+    }
+  
+    .position-title {
+      margin: 0 0 0.25rem 0;
+    }
+  
+    .work-period {
+      margin: 0;
+    }
+  
+    .carier-path .section-inner {
+      padding: 1.428571428571429rem;
+    }
+  
+    @media (min-width: 490px) {
+      .carier-path .section-inner {
+        padding: 1.5rem;
+      }
+    }
+  
+    .projects {
+        border-radius: 0.875rem;
+        border: 0.67px solid var(--divider);
+        background: var(--surface);
+        overflow: hidden;
+    }
+  
+    .project-item {
+      padding: 1.428571428571429rem;
+      border-bottom: 0.67px solid var(--divider);;
+    }
+  
+    @media (min-width: 490px) {
+      .project-item {
+        padding: 1.5rem;
+      }
+    }
+  
+    .project-item:last-child {
+      border-bottom: none;
+    }
+  
+    .project-title {
+      margin-top: 0;
+    }
+  
+  
+    /*
+     * Education Section
+     */
+  
+    .education-title::after {
+      content: " 🎓";
+    }
+  
+    .study-point {
+      display: flex;
+      margin-bottom: 0;
+      padding: 1rem 0;
+      border-bottom: 0.67px solid var(--divider);
+    }
+  
+    .study-point.university  {
+      border: none;
+    }
+  
+    .study-point dt {
+      flex-shrink: 0;
+      width: 4rem;
+      margin: 0;
+    }
+  
+    @media (min-width: 490px) {
+      .study-point dt {
+        width: 6rem;
+      }
+    }
+  
+    .study-point dd {
+      margin: 0;
+    }
+  
+    .study-point dd span {
+      display: block;
+    }
+  
+  
+    /* ==========================================================================
+       Github calendar styles
+       ========================================================================== */
+      
+    .github-calendar {
+      text-align: center;
+    }
+  
+    svg.js-calendar-graph-svg + div {
+      font-size: 1rem;
+      margin-top: 1rem;
+    }
+    
+    rect.ContributionCalendar-day[data-level='0'] {
+        fill: var(--color-calendar-graph-day-bg);
+    }
+    
+    rect.ContributionCalendar-day[data-level='1'] {
+        fill: var(--color-calendar-graph-day-L1-bg);
+    }
+    
+    rect.ContributionCalendar-day[data-level='2'] {
+        fill: var(--color-calendar-graph-day-L2-bg);
+    }
+    
+    rect.ContributionCalendar-day[data-level='3'] {
+        fill: var(--color-calendar-graph-day-L3-bg);
+    }
+    
+    rect.ContributionCalendar-day[data-level='4'] {
+        fill: var(--color-calendar-graph-day-L4-bg);
+    }
+    
+    .github-calendar .width-full > .float-left {
+        display: none;
+    }
+    
+    .calendar-graph text.wday,
+    .calendar-graph text.month {
+        font-size: 10px;
+        fill: #aaa;
+    }
+    
+    .contrib-legend {
+        text-align: right;
+        padding: 0 14px 10px 0;
+        float: right;
+    }
+    
+    .contrib-legend .legend {
+        display: inline-block;
+        list-style: none;
+        margin: 0 5px;
+        position: relative;
+        bottom: -1px;
+        padding: 0;
+    }
+    
+    .contrib-legend .legend li {
+        display: inline-block;
+        width: 10px;
+        height: 10px;
+    }
+    
+    .text-small {
+        font-size: 12px;
+        color: #767676;
+    }
+    
+    .calendar-graph {
+        padding: 5px 0 0;
+        text-align: center;
+    }
+    
+    .contrib-column {
+        padding: 15px 0;
+        text-align: center;
+        border-left: 0.67px solid #25252d;
+        border-top: 0.67px solid #25252d;
+        font-size: 11px;
+    }
+    
+    .contrib-column-first {
+        border-left: 0;
+    }
+    
+    .table-column {
+        display: none;
+        width: 1%;
+        padding-right: 10px;
+        padding-left: 10px;
+        vertical-align: top;
+    }
+    
+    .contrib-number {
+        font-weight: 300;
+        line-height: 1.3em;
+        font-size: 24px;
+        display: block;
+    }
+    
+    .github-calendar img.spinner {
+        width: 70px;
+        margin-top: 50px;
+        min-height: 70px;
+    }
+    
+    .monospace {
+        text-align: center;
+        color: #000;
+        font-family: monospace;
+    }
+    
+    .monospace a {
+        color: #1D75AB;
+        text-decoration: none;
+    }
+    
+    .contrib-footer {
+        font-size: 11px;
+        padding: 0 10px 12px;
+        text-align: left;
+        width: 100%;
+        box-sizing: border-box;
+        height: 26px;
+    }
+    
+    .left.text-muted {
+        float: left;
+        margin-left: 9px;
+        color: #767676;
+    }
+    .left.text-muted a {
+        color: #4078c0;
+        text-decoration: none;
+    }
+    .left.text-muted a:hover,
+    .monospace a:hover {
+        text-decoration: underline;
+    }
+    
+    h2.f4.text-normal.mb-3 {
+        display: none;
+    }
+    
+    .float-left.text-gray {
+        float: left;
+    }
+    #user-activity-overview{
+        display:none;
+    }
+    
+    .day-tooltip {
+        white-space: nowrap;
+        position: absolute;
+        z-index: 99999;
+        padding: 10px;
+        font-size: 12px;
+        color: #959da5;
+        text-align: center;
+        background: rgba(0,0,0,.85);
+        border-radius: 3px;
+        display: none;
+        pointer-events: none;
+    }
+    .day-tooltip strong {
+        color: #dfe2e5;
+    }
+    .day-tooltip.is-visible {
+        display: block;
+    }
+    .day-tooltip:after {
+        position: absolute;
+        bottom: -10px;
+        left: 50%;
+        width: 5px;
+        height: 5px;
+        box-sizing: border-box;
+        margin: 0 0 0 -5px;
+        content: " ";
+        border: 5px solid transparent;
+        border-top-color: rgba(0,0,0,.85)
+    }
+    
+    text.ContributionCalendar-label {
+        fill: #ccc;
+        font-size: 11px;
+    }
+    
+    /* ==========================================================================
+       Helper classes
+       ========================================================================== */
+    
+    /*
+     * Hide visually and from screen readers
+     */
+    
+    .hidden,
+    [hidden] {
+      display: none !important;
+    }
+    
+    /*
+     * Hide only visually, but have it available for screen readers:
+     * https://snook.ca/archives/html_and_css/hiding-content-for-accessibility
+     *
+     * 1. For long content, line feeds are not interpreted as spaces and small width
+     *    causes content to wrap 1 word per line:
+     *    https://medium.com/@jessebeach/beware-smushed-off-screen-accessible-text-5952a4c2cbfe
+     */
+    
+    .visually-hidden {
+      border: 0;
+      clip: rect(0, 0, 0, 0);
+      height: 1px;
+      margin: -1px;
+      overflow: hidden;
+      padding: 0;
+      position: absolute;
+      white-space: nowrap;
+      width: 1px;
+      /* 1 */
+    }
+    
+    /*
+     * Extends the .visually-hidden class to allow the element
+     * to be focusable when navigated to via the keyboard:
+     * https://www.drupal.org/node/897638
+     */
+    
+    .visually-hidden.focusable:active,
+    .visually-hidden.focusable:focus {
+      clip: auto;
+      height: auto;
+      margin: 0;
+      overflow: visible;
+      position: static;
+      white-space: inherit;
+      width: auto;
+    }
+    
+    /*
+     * Hide visually and from screen readers, but maintain layout
+     */
+    
+    .invisible {
+      visibility: hidden;
+    }
+    
+    /*
+     * Clearfix: contain floats
+     *
+     * The use of `table` rather than `block` is only necessary if using
+     * `::before` to contain the top-margins of child elements.
+     */
+    
+    .clearfix::before,
+    .clearfix::after {
       content: "";
+      display: table;
+    }
+    
+    .clearfix::after {
+      clear: both;
+    }
+    
+   
+    /* ==========================================================================
+       Print styles.
+       Inlined to avoid the additional HTTP request:
+       https://www.phpied.com/delay-loading-your-print-css/
+       ========================================================================== */
+      
+    @media print,
+      (-webkit-min-device-pixel-ratio: 1.25),
+      (min-resolution: 1.25dppx),
+      (min-resolution: 120dpi) {
+      /* Style adjustments for high resolution devices */
     }
   
-    pre {
-      white-space: pre-wrap !important;
+    @media print {
+      *,
+      *::before,
+      *::after {
+        background: #fff !important;
+        color: #000 !important;
+        /* Black prints faster */
+        box-shadow: none !important;
+        text-shadow: none !important;
+      }
+    
+      a,
+      a:visited {
+        text-decoration: underline;
+      }
+    
+      a[href]::after {
+        content: " (" attr(href) ")";
+      }
+    
+      abbr[title]::after {
+        content: " (" attr(title) ")";
+      }
+    
+      /*
+       * Don't show links that are fragment identifiers,
+       * or use the `javascript:` pseudo protocol
+       */
+      a[href^="#"]::after,
+      a[href^="javascript:"]::after {
+        content: "";
+      }
+    
+      pre {
+        white-space: pre-wrap !important;
+      }
+    
+      pre,
+      blockquote {
+        border: 1px solid #999;
+        page-break-inside: avoid;
+      }
+    
+      tr,
+      img {
+        page-break-inside: avoid;
+      }
+    
+      p,
+      h2,
+      h3 {
+        orphans: 3;
+        widows: 3;
+      }
+    
+      h2,
+      h3 {
+        page-break-after: avoid;
+      }
     }
-  
-    pre,
-    blockquote {
-      border: 1px solid #999;
-      page-break-inside: avoid;
-    }
-  
-    tr,
-    img {
-      page-break-inside: avoid;
-    }
-  
-    p,
-    h2,
-    h3 {
-      orphans: 3;
-      widows: 3;
-    }
-  
-    h2,
-    h3 {
-      page-break-after: avoid;
-    }
-  }
-  
