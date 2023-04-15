@@ -9,9 +9,8 @@
     <aside class="aside-area"> {% block left_side %}{% endblock %} </aside>
     <nav class="nav-area"> {% include "includes/nav.html" %} </nav>
   </div>
+  <script src="{% static 'cv/maxxtor/github-calendar.min.js' %}"></script>
   <script>
-    GitHubCalendar(".github-calendar", "mAXxtor");
-    // or enable responsive functionality
     GitHubCalendar(".github-calendar", "mAXxtor", { responsive: true });
   </script>
 </body>
