@@ -8,8 +8,12 @@
     <main class="main-area">
       {% block main_content %}{% endblock %}
     </main>
-    {% block aside_content %}{% endblock %}
-    {% include "includes/nav.html" %}
+    <nav class="nav-area">
+      {% include "includes/nav.html" %}
+    </nav>
+    <aside class="aside-area">
+      {% block aside_content %}{% endblock %}
+    </aside>
   </div>
   <script src="{% static 'cv/maxxtor/github-calendar.min.js' %}"></script>
   <script>

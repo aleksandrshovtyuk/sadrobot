@@ -37,7 +37,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
-    'middleware.ProjectMinifyHtmlMiddleware',
+    'sadrobot.middleware.ProjectMinifyHtmlMiddleware',
 ]
 
 ROOT_URLCONF = 'sadrobot.urls'
