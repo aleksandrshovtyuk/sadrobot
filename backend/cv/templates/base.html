@@ -11,9 +11,7 @@
     <aside class="aside-area">
       {% block aside_content %}{% endblock %}
     </aside>
-    <nav class="nav-area">
-      {% include "includes/nav.html" %}
-    </nav>
+    {% include "includes/nav.html" %}
   </div>
   <script src="{% static 'cv/maxxtor/github-calendar.min.js' %}"></script>
   <script>
