@@ -329,15 +329,14 @@
     }
   
     .vcard-photo {
-      max-width: 100%;
+      width: 100%;
+      height: auto;
       border-radius: 1rem;
     }
   
     @media (min-width: 1280px) {
       .vcard-photo {
         border-radius: 1rem 1rem 0 0;
-        width: 100%;
-        height: auto;
       }
     }
   
