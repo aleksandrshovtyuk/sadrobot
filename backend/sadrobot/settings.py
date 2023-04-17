@@ -1,17 +1,9 @@
 import os
 from pathlib import Path
 
-from django_minify_html.middleware import MinifyHtmlMiddleware
 from dotenv import load_dotenv
 
 load_dotenv()
-
-
-class ProjectMinifyHtmlMiddleware(MinifyHtmlMiddleware):
-    minify_args = MinifyHtmlMiddleware.minify_args | {
-        "keep_closing_tags": True,
-    }
-
 
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -45,7 +37,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
-    'ProjectMinifyHtmlMiddleware',
+    'middleware.ProjectMinifyHtmlMiddleware',
 ]
 
 ROOT_URLCONF = 'sadrobot.urls'
