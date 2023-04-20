@@ -25,7 +25,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'cv',
-    'team',
+    'sadsite',
     'django_minify_html',
 ]
 
