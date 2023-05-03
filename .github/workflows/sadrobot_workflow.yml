@@ -9,7 +9,7 @@ jobs:
         matrix:
           python-version: ["3.9", "3.10", "3.11"]
     env: 
-      TEST_DB: True
+      TEST_DB: 'True'
     steps:
     - uses: actions/checkout@v2
     - name: Set up Python ${{ matrix.python-version }}
