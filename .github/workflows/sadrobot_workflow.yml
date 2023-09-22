@@ -85,7 +85,6 @@ jobs:
           sudo docker volume rm sadrobot_static_value
           sudo docker compose up -d
           sudo docker compose exec -T sadrobot python manage.py collectstatic --no-input
-        #  sudo docker compose exec -T sadrobot python manage.py makemigrations
           sudo docker compose exec -T sadrobot python manage.py make migrate
           sudo docker image prune -f
 
