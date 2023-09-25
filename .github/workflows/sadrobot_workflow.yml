@@ -62,13 +62,13 @@ jobs:
         host: ${{ secrets.HOST }}
         username: ${{ secrets.USER }}
         key: ${{ secrets.SSH_KEY }}
-        passphrase: ${{ secrets.PASSPHRASE }}
+        password: ${{ secrets.PASSPHRASE }}
         script: |
           set -m
           cd sadrobot
           rm -f .env
-          sudo touch .env
-          sudo chmod 666 .env
+          sudo -S touch .env
+          sudo -S chmod 666 .env
           echo SECRET_KEY='${{ secrets.SECRET_KEY }}' >> .env
           echo DEBUG_MODE=${{ secrets.DEBUG_MODE }} >> .env
           echo ALLOWED_HOSTS=${{ secrets.ALLOWED_HOSTS }} >> .env
@@ -79,14 +79,14 @@ jobs:
           echo POSTGRES_PASSWORD=${{ secrets.POSTGRES_PASSWORD }} >> .env
           echo DB_HOST=${{ secrets.DB_HOST }} >> .env
           echo DB_PORT=${{ secrets.DB_PORT }} >> .env
-          sudo docker compose stop
-          sudo docker compose rm -f sadrobot
-          sudo docker pull ${{ secrets.DOCKER_USERNAME }}/sadrobot
-          sudo docker volume rm sadrobot_static_value
-          sudo docker compose up -d
-          sudo docker compose exec -T sadrobot python manage.py collectstatic --no-input
-          sudo docker compose exec -T sadrobot python manage.py make migrate
-          sudo docker image prune -f
+          sudo -S docker compose stop
+          sudo -S docker compose rm -f sadrobot
+          sudo -S docker pull ${{ secrets.DOCKER_USERNAME }}/sadrobot
+          sudo -S docker volume rm sadrobot_static_value
+          sudo -S docker compose up -d
+          sudo -S docker compose exec -T sadrobot python manage.py collectstatic --no-input
+          sudo -S docker compose exec -T sadrobot python manage.py make migrate
+          sudo -S docker image prune -f
 
   send_message:
     runs-on: ubuntu-latest
