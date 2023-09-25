@@ -67,8 +67,8 @@ jobs:
           set -m
           cd sadrobot
           rm -f .env
-          sudo -S touch .env
-          sudo -S chmod 666 .env
+          echo "PASSWORD" | sudo -S touch .env
+          echo "PASSWORD" | sudo -S chmod 666 .env
           echo SECRET_KEY='${{ secrets.SECRET_KEY }}' >> .env
           echo DEBUG_MODE=${{ secrets.DEBUG_MODE }} >> .env
           echo ALLOWED_HOSTS=${{ secrets.ALLOWED_HOSTS }} >> .env
@@ -79,14 +79,14 @@ jobs:
           echo POSTGRES_PASSWORD=${{ secrets.POSTGRES_PASSWORD }} >> .env
           echo DB_HOST=${{ secrets.DB_HOST }} >> .env
           echo DB_PORT=${{ secrets.DB_PORT }} >> .env
-          sudo -S docker compose stop
-          sudo -S docker compose rm -f sadrobot
-          sudo -S docker pull ${{ secrets.DOCKER_USERNAME }}/sadrobot
-          sudo -S docker volume rm sadrobot_static_value
-          sudo -S docker compose up -d
-          sudo -S docker compose exec -T sadrobot python manage.py collectstatic --no-input
-          sudo -S docker compose exec -T sadrobot python manage.py make migrate
-          sudo -S docker image prune -f
+          echo "PASSWORD" | sudo -S docker compose stop
+          echo "PASSWORD" | sudo -S docker compose rm -f sadrobot
+          echo "PASSWORD" | sudo -S docker pull ${{ secrets.DOCKER_USERNAME }}/sadrobot
+          echo "PASSWORD" | sudo -S docker volume rm sadrobot_static_value
+          echo "PASSWORD" | sudo -S docker compose up -d
+          echo "PASSWORD" | sudo -S docker compose exec -T sadrobot python manage.py collectstatic --no-input
+          echo "PASSWORD" | sudo -S docker compose exec -T sadrobot python manage.py make migrate
+          echo "PASSWORD" | sudo -S docker image prune -f
 
   send_message:
     runs-on: ubuntu-latest
