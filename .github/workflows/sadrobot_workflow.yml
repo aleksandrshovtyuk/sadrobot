@@ -65,7 +65,7 @@ jobs:
         password: ${{ secrets.PASSPHRASE }}
         script: |
           set -m
-          cd /var/www/sadrobot.app
+          cd ${{ secrets.PROJECT_PATH }}
           rm -f .env
           echo ${{ secrets.PASSPHRASE }} | sudo -S touch .env
           echo ${{ secrets.PASSPHRASE }} | sudo -S chmod 666 .env
