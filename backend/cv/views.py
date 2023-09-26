@@ -7,3 +7,7 @@ class MaxxtorCvView(TemplateView):
 
 class AlexshowCvView(TemplateView):
     template_name = 'cv/alexshow.html'
+
+
+class ElenashowCvView(TemplateView):
+    template_name = 'cv/elenashow.html'
