@@ -2,9 +2,8 @@
 
 <!doctype html>
 <html lang="ru" prefix="og: https://ogp.me/ns#">
-<head> 
-  <title>{% block title %}{% endblock %}</title>
-  {% include "includes/html-head.html" %}
+<head>
+  {% block html-head %}{% endblock %}
 </head>
 <body>
   <div id="top" class="grid-container">
