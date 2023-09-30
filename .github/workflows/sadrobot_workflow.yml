@@ -64,11 +64,10 @@ jobs:
         key: ${{ secrets.SSH_KEY }}
         password: ${{ secrets.PASSPHRASE }}
         script: |
-          set -m
-          cd sadrobot
+          cd ${{ secrets.PROJECT_PATH }}
           rm -f .env
-          echo ${{ secrets.PASSPHRASE }} | sudo -S touch .env
-          echo ${{ secrets.PASSPHRASE }} | sudo -S chmod 666 .env
+          touch .env
+          chmod 666 .env
           echo SECRET_KEY='${{ secrets.SECRET_KEY }}' >> .env
           echo DEBUG_MODE=${{ secrets.DEBUG_MODE }} >> .env
           echo ALLOWED_HOSTS=${{ secrets.ALLOWED_HOSTS }} >> .env
@@ -79,15 +78,15 @@ jobs:
           echo POSTGRES_PASSWORD=${{ secrets.POSTGRES_PASSWORD }} >> .env
           echo DB_HOST=${{ secrets.DB_HOST }} >> .env
           echo DB_PORT=${{ secrets.DB_PORT }} >> .env
-          echo ${{ secrets.PASSPHRASE }} | sudo -S docker compose stop
-          echo ${{ secrets.PASSPHRASE }} | sudo -S docker compose rm -f sadrobot
-          echo ${{ secrets.PASSPHRASE }} | sudo -S docker pull ${{ secrets.DOCKER_USERNAME }}/sadrobot
-          echo ${{ secrets.PASSPHRASE }} | sudo -S docker volume rm sadrobot_static_value
-          echo ${{ secrets.PASSPHRASE }} | sudo -S docker compose up -d
-          echo ${{ secrets.PASSPHRASE }} | sudo -S docker compose exec -T sadrobot python manage.py collectstatic --no-input
-          echo ${{ secrets.PASSPHRASE }} | sudo -S docker compose exec -T sadrobot python manage.py makemigrations
-          echo ${{ secrets.PASSPHRASE }} | sudo -S docker compose exec -T sadrobot python manage.py migrate
-          echo ${{ secrets.PASSPHRASE }} | sudo -S docker image prune -f
+          docker compose stop
+          docker compose rm -f sadrobot
+          docker pull ${{ secrets.DOCKER_USERNAME }}/sadrobot
+          docker volume rm sadrobot_static_value
+          docker compose up -d
+          docker compose exec -T sadrobot python manage.py collectstatic --no-input
+          docker compose exec -T sadrobot python manage.py makemigrations
+          docker compose exec -T sadrobot python manage.py migrate
+          docker image prune -f
 
   send_message:
     runs-on: ubuntu-latest
