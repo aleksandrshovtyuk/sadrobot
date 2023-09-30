@@ -86,8 +86,8 @@ jobs:
           echo ${{ secrets.PASSPHRASE }} | sudo -S docker volume rm sadrobot_static_value
           echo ${{ secrets.PASSPHRASE }} | sudo -S docker compose up -d
           echo ${{ secrets.PASSPHRASE }} | sudo -S docker compose exec -T sadrobot python manage.py collectstatic --no-input
-          # echo ${{ secrets.PASSPHRASE }} | sudo -S docker compose exec -T sadrobot python manage.py makemigrations
-          # echo ${{ secrets.PASSPHRASE }} | sudo -S docker compose exec -T sadrobot python manage.py migrate
+          echo ${{ secrets.PASSPHRASE }} | sudo -S docker compose exec -T sadrobot python manage.py makemigrations
+          echo ${{ secrets.PASSPHRASE }} | sudo -S docker compose exec -T sadrobot python manage.py migrate
           echo ${{ secrets.PASSPHRASE }} | sudo -S docker image prune -f
 
   send_message:
