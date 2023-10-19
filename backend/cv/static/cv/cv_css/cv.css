@@ -350,6 +350,17 @@
         display: none;
       }
     }
+
+    .vcard-detail {
+        display: flex;
+        align-items: center;
+    }
+
+    .vcard-detail a {
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
   
     .vcard-detail.name {
       display: none;
